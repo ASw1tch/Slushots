@@ -7,7 +7,6 @@
 
 import Foundation
 
-import Foundation
 
 struct SPTAuthResponse: Codable {
     let access_token: String

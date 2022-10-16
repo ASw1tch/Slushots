@@ -9,13 +9,13 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
-  
-
-    @IBAction func spotifyButtonPressed(_ sender: UIButton) {
+    
+    
+    @IBAction private func spotifyButtonPressed(_ sender: UIButton) {
         
     }
     
-    @IBAction func AppleMusicButtonPressed(_ sender: UIButton) {
+    @IBAction private func AppleMusicButtonPressed(_ sender: UIButton) {
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,10 +25,10 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    
+        
     }
     
-
-
+    
+    
 }
 
