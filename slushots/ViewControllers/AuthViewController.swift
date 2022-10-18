@@ -24,10 +24,10 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Just a second"
+        title = "Loading..."
         webView.navigationDelegate = self
         view.addSubview(webView)
-        guard let url = AuthManager.shared.signInURL else {
+        guard let url = SPTFAuthManager.shared.signInURL else {
             print("There is no Sign in URL")
             return 
         }
@@ -55,7 +55,7 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
         
         
         
-        AuthManager.shared.exchangeCodeForToken(code: code) { [weak self] success in
+        SPTFAuthManager.shared.exchangeCodeForToken(code: code) { [weak self] success in
             DispatchQueue.main.async {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 guard let _ = storyboard.instantiateInitialViewController() as? UINavigationController else {

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9D3D6AE228F59D280082E0E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D3D6AE128F59D280082E0E9 /* Assets.xcassets */; };
-		9DD034D328FC630300CA779A /* AMApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD034D228FC630300CA779A /* AMApiCaller.swift */; };
 		BE0BA91F28C8FD520065D19D /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0BA91E28C8FD520065D19D /* CacheManager.swift */; };
 		BE0BA92128CA6B230065D19D /* SignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0BA92028CA6B230065D19D /* SignOut.swift */; };
 		BE0BA92428CBA8AD0065D19D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0BA92328CBA8AD0065D19D /* Constants.swift */; };
@@ -22,7 +21,6 @@
 		BE11ED9128C28BD700374ACE /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11ED9028C28BD700374ACE /* PlayerViewController.swift */; };
 		BE11ED9328C28EF500374ACE /* SPTFAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11ED9228C28EF500374ACE /* SPTFAuthManager.swift */; };
 		BE11ED9528C2A16700374ACE /* STPFAuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11ED9428C2A16700374ACE /* STPFAuthResponse.swift */; };
-		BE1F97C828D65E43004CEB64 /* AppleAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1F97C728D65E42004CEB64 /* AppleAuthViewController.swift */; };
 		BE5B1A3928C49F0F00F832D0 /* SPTFApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5B1A3828C49F0F00F832D0 /* SPTFApiCaller.swift */; };
 		BE5B1A3B28C4D1CE00F832D0 /* SPTFResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5B1A3A28C4D1CE00F832D0 /* SPTFResponse.swift */; };
 		BE5B1A3D28C4E11400F832D0 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5B1A3C28C4E11400F832D0 /* Artist.swift */; };
@@ -37,7 +35,6 @@
 
 /* Begin PBXFileReference section */
 		9D3D6AE128F59D280082E0E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9DD034D228FC630300CA779A /* AMApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMApiCaller.swift; sourceTree = "<group>"; };
 		BE0BA91E28C8FD520065D19D /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		BE0BA92028CA6B230065D19D /* SignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOut.swift; sourceTree = "<group>"; };
 		BE0BA92328CBA8AD0065D19D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -54,7 +51,6 @@
 		BE11ED9228C28EF500374ACE /* SPTFAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTFAuthManager.swift; sourceTree = "<group>"; };
 		BE11ED9428C2A16700374ACE /* STPFAuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STPFAuthResponse.swift; sourceTree = "<group>"; };
 		BE11ED9628C2A5CC00374ACE /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
-		BE1F97C728D65E42004CEB64 /* AppleAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthViewController.swift; sourceTree = "<group>"; };
 		BE5B1A3828C49F0F00F832D0 /* SPTFApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTFApiCaller.swift; sourceTree = "<group>"; };
 		BE5B1A3A28C4D1CE00F832D0 /* SPTFResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTFResponse.swift; sourceTree = "<group>"; };
 		BE5B1A3C28C4E11400F832D0 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -92,9 +88,18 @@
 				BE11ED9228C28EF500374ACE /* SPTFAuthManager.swift */,
 				BE5B1A3828C49F0F00F832D0 /* SPTFApiCaller.swift */,
 				BEFF96F528CF2321005F4152 /* YTApiCaller.swift */,
-				9DD034D228FC630300CA779A /* AMApiCaller.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		9DD034D928FC825E00CA779A /* YouTube */ = {
+			isa = PBXGroup;
+			children = (
+				BEFF96F928CF249E005F4152 /* YTResponse.swift */,
+				BEFF96FB28D2620A005F4152 /* YTSnippet.swift */,
+				BEFF96FD28D2622D005F4152 /* YT_ID.swift */,
+			);
+			path = YouTube;
 			sourceTree = "<group>";
 		};
 		BE0BA92228CA6B3D0065D19D /* Spotify */ = {
@@ -149,7 +154,6 @@
 				BE11ED8C28C28BA100374ACE /* AuthViewController.swift */,
 				BE11ED8E28C28BBA00374ACE /* MediaListViewController.swift */,
 				BE11ED9028C28BD700374ACE /* PlayerViewController.swift */,
-				BE1F97C728D65E42004CEB64 /* AppleAuthViewController.swift */,
 				BE11ED9628C2A5CC00374ACE /* PlaylistTableViewCell.swift */,
 			);
 			path = ViewControllers;
@@ -158,10 +162,8 @@
 		BE11ED8928C2861B00374ACE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BEFF96F928CF249E005F4152 /* YTResponse.swift */,
-				BEFF96FB28D2620A005F4152 /* YTSnippet.swift */,
-				BEFF96FD28D2622D005F4152 /* YT_ID.swift */,
 				BE0BA92228CA6B3D0065D19D /* Spotify */,
+				9DD034D928FC825E00CA779A /* YouTube */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -276,13 +278,11 @@
 				BE11ED7728C2842E00374ACE /* SceneDelegate.swift in Sources */,
 				BE11ED8F28C28BBA00374ACE /* MediaListViewController.swift in Sources */,
 				BEFF96FE28D2622D005F4152 /* YT_ID.swift in Sources */,
-				9DD034D328FC630300CA779A /* AMApiCaller.swift in Sources */,
 				BE5B1A4128C624F100F832D0 /* Image.swift in Sources */,
 				BE5B1A3B28C4D1CE00F832D0 /* SPTFResponse.swift in Sources */,
 				BE5B1A4228C7DD5500F832D0 /* PlaylistTableViewCell.swift in Sources */,
 				BE11ED9128C28BD700374ACE /* PlayerViewController.swift in Sources */,
 				BE11ED9528C2A16700374ACE /* STPFAuthResponse.swift in Sources */,
-				BE1F97C828D65E43004CEB64 /* AppleAuthViewController.swift in Sources */,
 				BE5B1A3F28C624E300F832D0 /* Track.swift in Sources */,
 				BE5B1A3928C49F0F00F832D0 /* SPTFApiCaller.swift in Sources */,
 			);

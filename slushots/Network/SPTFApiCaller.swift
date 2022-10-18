@@ -21,7 +21,7 @@ final class SPTFApiCaller {
         case failedToGetData
     }
     public func getSpotifyPlayList(completion: @escaping (SpotifySongResponse?) -> Void) {
-        AuthManager.shared.withValidToken { token in
+        SPTFAuthManager.shared.withValidToken { token in
             let apiURL = Constants.baseAPIURL
             var request = URLRequest(url: apiURL!)
             request.setValue("Bearer \(token)",

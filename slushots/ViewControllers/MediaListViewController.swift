@@ -60,7 +60,7 @@ final class MediaListViewController: UIViewController{
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { _ in
-            AuthManager.shared.signOut { [weak self] signedOut in
+            SPTFAuthManager.shared.signOut { [weak self] signedOut in
                 if signedOut {
                     DispatchQueue.main.async {
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)

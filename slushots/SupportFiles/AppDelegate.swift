@@ -13,8 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         
-        if AuthManager.shared.isSignedIn {
-            AuthManager.shared.refreshIfNeeded(completion: nil)
+        if SPTFAuthManager.shared.isSignedIn {
+            SPTFAuthManager.shared.refreshIfNeeded(completion: nil)
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             guard let navigationController = storyboard.instantiateInitialViewController() as? UINavigationController else {

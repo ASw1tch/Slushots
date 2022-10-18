@@ -7,8 +7,8 @@
 
 import Foundation
 
-final class AuthManager {
-    static let shared = AuthManager()
+final class SPTFAuthManager {
+    static let shared = SPTFAuthManager()
     
     private var refreshingToken = false
     

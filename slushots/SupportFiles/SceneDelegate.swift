@@ -14,8 +14,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return  }
         let window = UIWindow(windowScene: windowScene)
-        if AuthManager.shared.isSignedIn {
-            AuthManager.shared.refreshIfNeeded(completion: nil)
+        if SPTFAuthManager.shared.isSignedIn {
+            SPTFAuthManager.shared.refreshIfNeeded(completion: nil)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             guard let navigationController = storyboard.instantiateInitialViewController() as? UINavigationController else {
                 print("Error: Could not set navigationController(SceneDelegate)")
