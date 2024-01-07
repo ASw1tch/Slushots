@@ -31,6 +31,8 @@
 		BEFF96FA28CF249E005F4152 /* YTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF96F928CF249E005F4152 /* YTResponse.swift */; };
 		BEFF96FC28D2620A005F4152 /* YTSnippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF96FB28D2620A005F4152 /* YTSnippet.swift */; };
 		BEFF96FE28D2622D005F4152 /* YT_ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF96FD28D2622D005F4152 /* YT_ID.swift */; };
+		EA1A90672B4B079900B3BE83 /* YandexLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A90662B4B079900B3BE83 /* YandexLoginViewController.swift */; };
+		EAEA9C8A2B4AFA2B000FBCE4 /* concert-6187717.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAEA9C892B4AFA2B000FBCE4 /* concert-6187717.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		BEFF96F928CF249E005F4152 /* YTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTResponse.swift; sourceTree = "<group>"; };
 		BEFF96FB28D2620A005F4152 /* YTSnippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTSnippet.swift; sourceTree = "<group>"; };
 		BEFF96FD28D2622D005F4152 /* YT_ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YT_ID.swift; sourceTree = "<group>"; };
+		EA1A90662B4B079900B3BE83 /* YandexLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginViewController.swift; sourceTree = "<group>"; };
+		EAEA9C892B4AFA2B000FBCE4 /* concert-6187717.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "concert-6187717.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +144,8 @@
 				BE11ED8A28C2863700374ACE /* Storyboards */,
 				BE11ED8928C2861B00374ACE /* Models */,
 				9D3D6AE128F59D280082E0E9 /* Assets.xcassets */,
+				EAEA9C892B4AFA2B000FBCE4 /* concert-6187717.jpg */,
 				BE11ED8828C285F500374ACE /* ViewControllers */,
-				BEC3263A28D7C38100D88074 /* New Group */,
 				BE11ED8228C2843600374ACE /* Info.plist */,
 			);
 			path = slushots;
@@ -155,6 +159,7 @@
 				BE11ED8E28C28BBA00374ACE /* MediaListViewController.swift */,
 				BE11ED9028C28BD700374ACE /* PlayerViewController.swift */,
 				BE11ED9628C2A5CC00374ACE /* PlaylistTableViewCell.swift */,
+				EA1A90662B4B079900B3BE83 /* YandexLoginViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -184,13 +189,6 @@
 				BE0BA92328CBA8AD0065D19D /* Constants.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		BEC3263A28D7C38100D88074 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +251,7 @@
 			files = (
 				BE11ED8128C2843600374ACE /* LaunchScreen.storyboard in Resources */,
 				BE11ED7C28C2842E00374ACE /* Main.storyboard in Resources */,
+				EAEA9C8A2B4AFA2B000FBCE4 /* concert-6187717.jpg in Resources */,
 				9D3D6AE228F59D280082E0E9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +266,7 @@
 				BE11ED8D28C28BA100374ACE /* AuthViewController.swift in Sources */,
 				BE0BA92428CBA8AD0065D19D /* Constants.swift in Sources */,
 				BEFF96FC28D2620A005F4152 /* YTSnippet.swift in Sources */,
+				EA1A90672B4B079900B3BE83 /* YandexLoginViewController.swift in Sources */,
 				BE0BA92128CA6B230065D19D /* SignOut.swift in Sources */,
 				BE0BA91F28C8FD520065D19D /* CacheManager.swift in Sources */,
 				BEFF96FA28CF249E005F4152 /* YTResponse.swift in Sources */,
@@ -431,7 +431,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DJCB4KF639;
+				DEVELOPMENT_TEAM = RWP28CYWVZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = slushots/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -445,7 +445,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.aswitch.slushots;
+				PRODUCT_BUNDLE_IDENTIFIER = me.aswitch.slushots2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -460,7 +460,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DJCB4KF639;
+				DEVELOPMENT_TEAM = RWP28CYWVZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = slushots/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -474,7 +474,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.aswitch.slushots;
+				PRODUCT_BUNDLE_IDENTIFIER = me.aswitch.slushots2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
