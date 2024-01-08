@@ -7,14 +7,19 @@
 
 import UIKit
 
+
+
 final class MediaListViewController: UIViewController{
     
     @IBOutlet private weak var tableView: UITableView!
     
     
     var result: SpotifySongResponse?
+    var yaResult: YandexSongResponse?
     var apiCaller = SPTFApiCaller()
-    
+    var yandexVC = YandexLoginViewController()
+    var yandexApiCaller = YandexApiCaller()
+    var yandexOwnerName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +27,7 @@ final class MediaListViewController: UIViewController{
         title = "Slushots"
         navigationItem.hidesBackButton = true
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.orange]
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.up.backward.circle"),
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "figure.walk.departure"),
                                                             landscapeImagePhone: nil,
                                                             style: .done,
                                                             target: self,
@@ -33,20 +38,28 @@ final class MediaListViewController: UIViewController{
         
         
     }
-    
-    
-    
-    
-    
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
     }
     
+    
+    
+    func didEnterOwnerName(_ ownerName: String) {
+        print("1: \(yandexOwnerName)")
+        print("2: \(ownerName)")
+        yandexApiCaller.getYandexPlayList(ownerName: ownerName) { result in
+            DispatchQueue.main.async {
+                self.yaResult = result
+                self.tableView.reloadData()
+            }
+        }
+        }
+    
     public func fetchSongs() {
+        
         apiCaller.getSpotifyPlayList() { result in
-            
             DispatchQueue.main.async {
                 self.result = result
                 self.tableView.reloadData()
@@ -86,27 +99,39 @@ final class MediaListViewController: UIViewController{
 extension MediaListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let result = result  {
+        if let result = result {
             return result.items.count
+        } else if let yaResult = yaResult {
+            return yaResult.playlist.tracks.count
         }
-        return  0
+        
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath) as? PlaylistTableViewCell else {fatalError("Failed to dequeue PlaylistTableViewCell")}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath) as? PlaylistTableViewCell else {
+            fatalError("Failed to dequeue PlaylistTableViewCell")
+        }
         
-        cell.songLabel.text = result?.items[indexPath.row].track.name
-        cell.artistLabel.text = result?.items[indexPath.row].track.artists[indexPath.section].name
-        let imageString = URL(string: result!.items[indexPath.row].track.album.images[indexPath.section].url)
-        cell.getImage(url: imageString!)
-        
+        if let result = result {
+            // Handle Spotify result
+            cell.songLabel.text = result.items[indexPath.row].track.name
+            cell.artistLabel.text = result.items[indexPath.row].track.artists[indexPath.section].name
+            let imageString = URL(string: result.items[indexPath.row].track.album.images[indexPath.section].url)
+            cell.getImage(url: imageString!)
+        } else if let yaResult = yaResult {
+            // Handle Yandex result
+            
+            let coverPrepared = String("https://" + yaResult.playlist.tracks[indexPath.row].coverUri.dropLast(2) + "400x400")
+            
+            cell.songLabel.text = yaResult.playlist.tracks[indexPath.row].title
+            cell.artistLabel.text = yaResult.playlist.tracks[indexPath.row].artists[indexPath.section].name
+            cell.getImage(url: URL(string: coverPrepared)!)
+        }
+//        yaResult.playlist.tracks[indexPath.row].artists[indexPath.row].name
         return cell
     }
-    
 }
-
-//var passTheSong: String!
-//var passTheArtist: String!
 
 extension MediaListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -115,10 +140,17 @@ extension MediaListViewController: UITableViewDelegate {
         _ = self.result?.items[tableView.indexPathForSelectedRow!.row]
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "PlayerViewController") as? PlayerViewController
         vc?.prepareVideo()
-        vc?.artistPassed = (result?.items[indexPath.row].track.artists[indexPath.section].name)!
-        vc?.songPassed = (result?.items[indexPath.row].track.name)!
-        
-        navigationController?.pushViewController(vc!, animated: true)
-        
-    }
+        if let result = result {
+                    vc?.artistPassed = result.items[indexPath.row].track.artists[indexPath.section].name
+                    vc?.songPassed = result.items[indexPath.row].track.name
+                } else if let yaResult = yaResult {
+                    let track = yaResult.playlist.tracks[indexPath.row]
+
+                    vc?.artistPassed = track.artists[indexPath.section].name
+                    vc?.songPassed = track.title
+                }
+
+                navigationController?.pushViewController(vc!, animated: true)
+            }
 }
+

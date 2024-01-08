@@ -27,7 +27,7 @@ class PlaylistTableViewCell: UITableViewCell {
                 }
             }
             
-            guard let image = UIImage(data: data!) else {
+            guard let image = UIImage(data: data ?? Data(count: 0) ) else {
                 print("There's no data in UIImage")
                 return
             }

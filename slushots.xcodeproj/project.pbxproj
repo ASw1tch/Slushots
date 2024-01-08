@@ -32,7 +32,10 @@
 		BEFF96FC28D2620A005F4152 /* YTSnippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF96FB28D2620A005F4152 /* YTSnippet.swift */; };
 		BEFF96FE28D2622D005F4152 /* YT_ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF96FD28D2622D005F4152 /* YT_ID.swift */; };
 		EA1A90672B4B079900B3BE83 /* YandexLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A90662B4B079900B3BE83 /* YandexLoginViewController.swift */; };
-		EAEA9C8A2B4AFA2B000FBCE4 /* concert-6187717.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EAEA9C892B4AFA2B000FBCE4 /* concert-6187717.jpg */; };
+		EA1A906B2B4B17A200B3BE83 /* crowd-1056764.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA1A906A2B4B17A200B3BE83 /* crowd-1056764.jpg */; };
+		EA1A906F2B4B2C4200B3BE83 /* iphone-1836071.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA1A906E2B4B2C4200B3BE83 /* iphone-1836071.jpg */; };
+		EA1A90722B4B345F00B3BE83 /* YandexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A90712B4B345F00B3BE83 /* YandexResponse.swift */; };
+		EA1A90782B4B519100B3BE83 /* YandexApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1A90772B4B519100B3BE83 /* YandexApiCaller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +66,10 @@
 		BEFF96FB28D2620A005F4152 /* YTSnippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTSnippet.swift; sourceTree = "<group>"; };
 		BEFF96FD28D2622D005F4152 /* YT_ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YT_ID.swift; sourceTree = "<group>"; };
 		EA1A90662B4B079900B3BE83 /* YandexLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginViewController.swift; sourceTree = "<group>"; };
-		EAEA9C892B4AFA2B000FBCE4 /* concert-6187717.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "concert-6187717.jpg"; sourceTree = "<group>"; };
+		EA1A906A2B4B17A200B3BE83 /* crowd-1056764.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "crowd-1056764.jpg"; sourceTree = "<group>"; };
+		EA1A906E2B4B2C4200B3BE83 /* iphone-1836071.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "iphone-1836071.jpg"; sourceTree = "<group>"; };
+		EA1A90712B4B345F00B3BE83 /* YandexResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexResponse.swift; sourceTree = "<group>"; };
+		EA1A90772B4B519100B3BE83 /* YandexApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexApiCaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 				BE11ED9228C28EF500374ACE /* SPTFAuthManager.swift */,
 				BE5B1A3828C49F0F00F832D0 /* SPTFApiCaller.swift */,
 				BEFF96F528CF2321005F4152 /* YTApiCaller.swift */,
+				EA1A90772B4B519100B3BE83 /* YandexApiCaller.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -144,7 +151,8 @@
 				BE11ED8A28C2863700374ACE /* Storyboards */,
 				BE11ED8928C2861B00374ACE /* Models */,
 				9D3D6AE128F59D280082E0E9 /* Assets.xcassets */,
-				EAEA9C892B4AFA2B000FBCE4 /* concert-6187717.jpg */,
+				EA1A906A2B4B17A200B3BE83 /* crowd-1056764.jpg */,
+				EA1A906E2B4B2C4200B3BE83 /* iphone-1836071.jpg */,
 				BE11ED8828C285F500374ACE /* ViewControllers */,
 				BE11ED8228C2843600374ACE /* Info.plist */,
 			);
@@ -167,6 +175,7 @@
 		BE11ED8928C2861B00374ACE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EA1A90702B4B342300B3BE83 /* Yandex */,
 				BE0BA92228CA6B3D0065D19D /* Spotify */,
 				9DD034D928FC825E00CA779A /* YouTube */,
 			);
@@ -189,6 +198,14 @@
 				BE0BA92328CBA8AD0065D19D /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EA1A90702B4B342300B3BE83 /* Yandex */ = {
+			isa = PBXGroup;
+			children = (
+				EA1A90712B4B345F00B3BE83 /* YandexResponse.swift */,
+			);
+			path = Yandex;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,10 +266,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA1A906F2B4B2C4200B3BE83 /* iphone-1836071.jpg in Resources */,
 				BE11ED8128C2843600374ACE /* LaunchScreen.storyboard in Resources */,
 				BE11ED7C28C2842E00374ACE /* Main.storyboard in Resources */,
-				EAEA9C8A2B4AFA2B000FBCE4 /* concert-6187717.jpg in Resources */,
 				9D3D6AE228F59D280082E0E9 /* Assets.xcassets in Resources */,
+				EA1A906B2B4B17A200B3BE83 /* crowd-1056764.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,8 +291,10 @@
 				BE11ED7928C2842E00374ACE /* WelcomeViewController.swift in Sources */,
 				BE11ED9328C28EF500374ACE /* SPTFAuthManager.swift in Sources */,
 				BE11ED7528C2842E00374ACE /* AppDelegate.swift in Sources */,
+				EA1A90722B4B345F00B3BE83 /* YandexResponse.swift in Sources */,
 				BE5B1A3D28C4E11400F832D0 /* Artist.swift in Sources */,
 				BEFF96F628CF2321005F4152 /* YTApiCaller.swift in Sources */,
+				EA1A90782B4B519100B3BE83 /* YandexApiCaller.swift in Sources */,
 				BE11ED7728C2842E00374ACE /* SceneDelegate.swift in Sources */,
 				BE11ED8F28C28BBA00374ACE /* MediaListViewController.swift in Sources */,
 				BEFF96FE28D2622D005F4152 /* YT_ID.swift in Sources */,

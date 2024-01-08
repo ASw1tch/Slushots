@@ -38,11 +38,11 @@ class PlayerViewController: UIViewController {
         
         let songString = String("\(songPassed)"+" \(artistPassed)")
         
-        YTApiCaller.shared.getVideoFromCell(songTitle: songString, completion: fetchVideo(resrponse:))
+       YTApiCaller.shared.getVideoFromCell(songTitle: songString, completion: fetchVideo(resrponse:))
         
     }
     
-    
+
     
     func fetchVideo(resrponse: YTResponse) {
         // Load it into the webView

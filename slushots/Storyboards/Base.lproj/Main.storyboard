@@ -17,15 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="concert-6187717.jpg" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VhH-MU-CSy">
-                                <rect key="frame" x="-8" y="0.0" width="422" height="908"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone-1836071.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VhH-MU-CSy">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="M2E-On-4pB">
-                                <rect key="frame" x="20" y="678" width="374" height="119"/>
+                                <rect key="frame" x="20" y="677" width="374" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeh-qV-x4G">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="49"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
                                         <color key="tintColor" red="0.40089845660000001" green="0.83382177349999997" blue="0.43072801830000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Spotify" cornerStyle="capsule">
@@ -40,7 +39,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sw0-7E-Mwy">
-                                        <rect key="frame" x="0.0" y="69" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="70" width="374" height="50"/>
                                         <color key="tintColor" red="0.40089845660000001" green="0.83382177349999997" blue="0.43072801830000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Yandex" cornerStyle="capsule">
@@ -51,27 +50,28 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="spotifyButtonPressed:" destination="kxp-Fn-SsL" eventType="touchUpInside" id="oVu-lA-PYv"/>
+                                            <segue destination="nff-eG-NJ4" kind="show" id="kZB-SP-eR5"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="P1k-AZ-AIg">
-                                <rect key="frame" x="43" y="169" width="328.5" height="184"/>
+                                <rect key="frame" x="43" y="144" width="328.5" height="178"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Slushots!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGf-cV-Fgs">
-                                        <rect key="frame" x="0.0" y="0.0" width="328.5" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Slushots!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhW-RK-hkZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="328.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Your personal assistant for finding video clips for your favorite songs! Just import watch videos for those songs for you!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QnX-Oa-uA7">
-                                        <rect key="frame" x="0.0" y="56" width="328.5" height="128"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Your personal assistant for finding video clips for your favorite songs! Just import watch videos for those songs for you!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QnX-Oa-uA7">
+                                        <rect key="frame" x="0.0" y="50" width="328.5" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="hnl-rB-VL4"/>
                                             <constraint firstAttribute="width" constant="328.5" id="plF-8q-Ts6"/>
                                         </constraints>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -80,13 +80,15 @@
                         <viewLayoutGuide key="safeArea" id="rvR-cf-R07"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="VhH-MU-CSy" firstAttribute="leading" secondItem="a9e-XK-1M9" secondAttribute="leading" id="BlJ-UJ-doO"/>
                             <constraint firstItem="P1k-AZ-AIg" firstAttribute="centerX" secondItem="M2E-On-4pB" secondAttribute="centerX" id="F7J-Gy-zMj"/>
-                            <constraint firstItem="P1k-AZ-AIg" firstAttribute="top" secondItem="a9e-XK-1M9" secondAttribute="topMargin" constant="25" id="Gan-3g-J7r"/>
-                            <constraint firstAttribute="bottom" secondItem="P1k-AZ-AIg" secondAttribute="bottom" constant="543" id="TfO-2a-8RS"/>
+                            <constraint firstItem="VhH-MU-CSy" firstAttribute="top" secondItem="a9e-XK-1M9" secondAttribute="top" id="JSl-tB-s0q"/>
                             <constraint firstItem="rvR-cf-R07" firstAttribute="bottom" secondItem="M2E-On-4pB" secondAttribute="bottom" constant="65" id="cvS-gv-DuG"/>
-                            <constraint firstItem="M2E-On-4pB" firstAttribute="top" secondItem="P1k-AZ-AIg" secondAttribute="bottom" constant="325" id="fd5-4Z-StD"/>
+                            <constraint firstItem="M2E-On-4pB" firstAttribute="top" secondItem="P1k-AZ-AIg" secondAttribute="bottom" constant="355" id="fd5-4Z-StD"/>
                             <constraint firstItem="M2E-On-4pB" firstAttribute="leading" secondItem="rvR-cf-R07" secondAttribute="leading" constant="20" id="iYG-Yq-w7g"/>
                             <constraint firstItem="rvR-cf-R07" firstAttribute="trailing" secondItem="M2E-On-4pB" secondAttribute="trailing" constant="20" id="jMi-ny-DV8"/>
+                            <constraint firstAttribute="bottom" secondItem="VhH-MU-CSy" secondAttribute="bottom" id="tIC-hm-Asy"/>
+                            <constraint firstItem="P1k-AZ-AIg" firstAttribute="centerX" secondItem="VhH-MU-CSy" secondAttribute="centerX" id="ufI-15-bPD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jbm-WI-h99"/>
@@ -102,13 +104,55 @@
                     <view key="view" contentMode="scaleToFill" id="EpU-wl-zPM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crowd-1056764.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TBx-gh-bFY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yes-R5-EkK">
+                                <rect key="frame" x="47" y="373" width="216" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="@yandex.ru" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ndn-eF-s4q">
+                                <rect key="frame" x="271" y="373" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IU-B2-krI">
+                                <rect key="frame" x="136" y="441" width="143" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Watch">
+                                    <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="watchButton:" destination="nff-eG-NJ4" eventType="touchUpInside" id="fFN-YC-K1f"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="To access your favorite playlist, simply enter your email on which you use Yandex Plus." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2b-i9-Aot">
+                                <rect key="frame" x="36" y="92" width="342" height="222"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Zr4-pd-Nu0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="0QA-Xu-fWE"/>
+                    <connections>
+                        <outlet property="loginTextField" destination="Yes-R5-EkK" id="OMW-If-aDK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ho3-2Y-SMv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2522" y="84"/>
+            <point key="canvasLocation" x="2521.739130434783" y="83.705357142857139"/>
         </scene>
         <!--Auth View Controller-->
         <scene sceneID="IRh-Pr-ORq">
@@ -137,6 +181,8 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kAn-4L-2NF">
                                 <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" systemColor="opaqueSeparatorColor"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SongCell" rowHeight="80" id="ozW-io-7hl" userLabel="PlaylistCell" customClass="PlaylistTableViewCell" customModule="slushots" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="80"/>
@@ -157,7 +203,7 @@
                                                     </accessibility>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                     <color key="textColor" systemColor="opaqueSeparatorColor"/>
-                                                    <nil key="highlightedColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPe-38-9op">
                                                     <rect key="frame" x="88" y="17" width="261" height="21"/>
@@ -190,7 +236,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="oaV-0D-r5G">
-                        <barButtonItem key="backBarButtonItem" title="Back" image="rectangle.portrait.and.arrow.right" catalog="system" id="ivY-CL-GB8"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ivY-CL-GB8"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="kAn-4L-2NF" id="jrE-JG-7aW"/>
@@ -299,8 +345,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="concert-6187717.jpg" width="1170.239990234375" height="780.239990234375"/>
-        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="109"/>
+        <image name="crowd-1056764.jpg" width="967.67999267578125" height="725.760009765625"/>
+        <image name="iphone-1836071.jpg" width="1362" height="907.91998291015625"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -309,6 +355,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

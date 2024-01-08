@@ -26,7 +26,7 @@ final class SPTFApiCaller {
             var request = URLRequest(url: apiURL!)
             request.setValue("Bearer \(token)",
                              forHTTPHeaderField: "Authorization")
-            
+            print(token)
             request.httpMethod = "GET"
             request.timeoutInterval = 30
             

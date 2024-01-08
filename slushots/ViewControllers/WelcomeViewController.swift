@@ -9,14 +9,9 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
-    
-    
     @IBAction private func spotifyButtonPressed(_ sender: UIButton) {
-        
     }
     
-    @IBAction private func AppleMusicButtonPressed(_ sender: UIButton) {
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.hidesBackButton = true

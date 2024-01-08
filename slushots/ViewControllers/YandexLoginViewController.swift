@@ -8,7 +8,18 @@
 import Foundation
 import UIKit
 
+
 class YandexLoginViewController: UIViewController {
+    
+    @IBOutlet weak var loginTextField: UITextField!
+    
+    @IBAction func watchButton(_ sender: UIButton) {
+        let MediaListVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MediaListViewController") as? MediaListViewController
+        MediaListVC?.didEnterOwnerName(loginTextField.text!)
+        navigationController?.pushViewController(MediaListVC!, animated: true)
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,3 +27,4 @@ class YandexLoginViewController: UIViewController {
         
     }
 }
+
