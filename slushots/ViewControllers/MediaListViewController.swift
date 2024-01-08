@@ -137,20 +137,30 @@ extension MediaListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You selected cell \(indexPath.row)!")
         
-        _ = self.result?.items[tableView.indexPathForSelectedRow!.row]
+        if let result = result {
+            print("Spotify Artist: \(result.items[indexPath.row].track.artists[indexPath.section].name)")
+            print("Spotify Song: \(result.items[indexPath.row].track.name)")
+        } else if let yaResult = yaResult {
+            let track = yaResult.playlist.tracks[indexPath.row]
+
+            print("Yandex Artist: \(track.artists[indexPath.section].name)")
+            print("Yandex Song: \(track.title)")
+        }
+
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "PlayerViewController") as? PlayerViewController
         vc?.prepareVideo()
+
         if let result = result {
-                    vc?.artistPassed = result.items[indexPath.row].track.artists[indexPath.section].name
-                    vc?.songPassed = result.items[indexPath.row].track.name
-                } else if let yaResult = yaResult {
-                    let track = yaResult.playlist.tracks[indexPath.row]
+            vc?.artistPassed = result.items[indexPath.row].track.artists[indexPath.section].name
+            vc?.songPassed = result.items[indexPath.row].track.name
+        } else if let yaResult = yaResult {
+            let track = yaResult.playlist.tracks[indexPath.row]
 
-                    vc?.artistPassed = track.artists[indexPath.section].name
-                    vc?.songPassed = track.title
-                }
+            vc?.artistPassed = track.artists[indexPath.section].name
+            vc?.songPassed = track.title
+        }
 
-                navigationController?.pushViewController(vc!, animated: true)
-            }
+        navigationController?.pushViewController(vc!, animated: true)
+    }
 }
 
