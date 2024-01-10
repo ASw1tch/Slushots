@@ -64,14 +64,15 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Your personal assistant for finding video clips for your favorite songs! Just import watch videos for those songs for you!" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QnX-Oa-uA7">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QnX-Oa-uA7">
                                         <rect key="frame" x="0.0" y="50" width="328.5" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="hnl-rB-VL4"/>
                                             <constraint firstAttribute="width" constant="328.5" id="plF-8q-Ts6"/>
                                         </constraints>
+                                        <string key="text">Your assistant for finding VIDEO CLIPS of YOUR FAVORITE SONGS! Just import your playlist and watch probably your future favorite videos!</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>

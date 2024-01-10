@@ -30,11 +30,5 @@ struct Playlist: Decodable {
         let name: String
     }
 
-//    struct Cover: Codable {
-//        let type: String
-//        let uri: String
-//        let prefix: String
-//    }
-
 
 
