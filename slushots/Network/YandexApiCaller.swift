@@ -12,8 +12,6 @@ final class YandexApiCaller {
     
     init() {}
     
-    var ownerName: String = ""
-    
     struct Constants {
         static var apiURL = "https://music.yandex.ru/handlers/playlist.jsx?kinds=3&light=true&madeFor=&withLikesCount=true&forceLogin=true&lang=ru&external-domain=music.yandex.ru&overembed=false&owner="
     }

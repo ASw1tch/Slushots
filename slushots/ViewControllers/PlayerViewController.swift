@@ -16,7 +16,7 @@ class PlayerViewController: UIViewController {
     @IBOutlet private weak var artistLabel: UILabel?
     @IBOutlet private weak var songLabel: UILabel?
     @IBOutlet private weak var webView: WKWebView!
-    @IBOutlet private weak var textView: UITextView!
+
     
     var songPassed: String = ""
     var artistPassed: String = ""
@@ -28,7 +28,6 @@ class PlayerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         prepareVideo()
         
-        print("HEREEEEEEE \(textView.textContainer.maximumNumberOfLines)")
         
         
     }
@@ -50,7 +49,6 @@ class PlayerViewController: UIViewController {
         DispatchQueue.main.async {
             let embedUrlString = K.ytEmbedUrl + resrponse.items[indexPath.endIndex].id.videoId
             self.artistLabel?.text = resrponse.items[indexPath.startIndex].snippet.title
-            self.textView.text = resrponse.items[indexPath.startIndex].snippet.description
             print(embedUrlString)
             
             let url = URL(string: embedUrlString)
@@ -63,7 +61,7 @@ class PlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Player"
+      
         
         prepareVideo()
         

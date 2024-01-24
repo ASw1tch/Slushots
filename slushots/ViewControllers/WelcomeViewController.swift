@@ -12,6 +12,7 @@ class WelcomeViewController: UIViewController {
     @IBAction private func spotifyButtonPressed(_ sender: UIButton) {
     }
     
+    let backgroundImageView = UIImageView()
     
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.hidesBackButton = true
@@ -19,11 +20,8 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+    
     }
-    
-    
-    
+
 }
 

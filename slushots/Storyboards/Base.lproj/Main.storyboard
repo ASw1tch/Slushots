@@ -17,8 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone-1836071.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VhH-MU-CSy">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iphone-1836071.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="IZX-J1-ovT">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="902"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="M2E-On-4pB">
                                 <rect key="frame" x="20" y="677" width="374" height="120"/>
@@ -81,15 +82,11 @@
                         <viewLayoutGuide key="safeArea" id="rvR-cf-R07"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VhH-MU-CSy" firstAttribute="leading" secondItem="a9e-XK-1M9" secondAttribute="leading" id="BlJ-UJ-doO"/>
                             <constraint firstItem="P1k-AZ-AIg" firstAttribute="centerX" secondItem="M2E-On-4pB" secondAttribute="centerX" id="F7J-Gy-zMj"/>
-                            <constraint firstItem="VhH-MU-CSy" firstAttribute="top" secondItem="a9e-XK-1M9" secondAttribute="top" id="JSl-tB-s0q"/>
                             <constraint firstItem="rvR-cf-R07" firstAttribute="bottom" secondItem="M2E-On-4pB" secondAttribute="bottom" constant="65" id="cvS-gv-DuG"/>
                             <constraint firstItem="M2E-On-4pB" firstAttribute="top" secondItem="P1k-AZ-AIg" secondAttribute="bottom" constant="355" id="fd5-4Z-StD"/>
                             <constraint firstItem="M2E-On-4pB" firstAttribute="leading" secondItem="rvR-cf-R07" secondAttribute="leading" constant="20" id="iYG-Yq-w7g"/>
                             <constraint firstItem="rvR-cf-R07" firstAttribute="trailing" secondItem="M2E-On-4pB" secondAttribute="trailing" constant="20" id="jMi-ny-DV8"/>
-                            <constraint firstAttribute="bottom" secondItem="VhH-MU-CSy" secondAttribute="bottom" id="tIC-hm-Asy"/>
-                            <constraint firstItem="P1k-AZ-AIg" firstAttribute="centerX" secondItem="VhH-MU-CSy" secondAttribute="centerX" id="ufI-15-bPD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jbm-WI-h99"/>
@@ -107,7 +104,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crowd-1056764.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TBx-gh-bFY">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yes-R5-EkK">
@@ -255,26 +252,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HaQ-uZ-6iS">
-                                <rect key="frame" x="10" y="94" width="394" height="758"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rDe-3n-w2Y">
+                                <rect key="frame" x="10" y="263" width="394" height="370.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUH-r6-ko7">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="16.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUH-r6-ko7">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yY-AW-zr6">
-                                        <rect key="frame" x="0.0" y="26.5" width="394" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <wkWebView verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONC-sp-8lX">
-                                        <rect key="frame" x="0.0" y="86.5" width="394" height="221.5"/>
+                                        <rect key="frame" x="0.0" y="20.5" width="394" height="350"/>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="ONC-sp-8lX" secondAttribute="height" multiplier="1280:720" id="OEp-zD-C02"/>
+                                            <constraint firstAttribute="height" constant="350" id="Bh5-ON-7AF"/>
+                                            <constraint firstAttribute="width" constant="394" id="OUd-sQ-aDs"/>
                                         </constraints>
                                         <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
                                             <dataDetectorTypes key="dataDetectorTypes" none="YES"/>
@@ -282,40 +274,21 @@
                                             <wkPreferences key="preferences"/>
                                         </wkWebViewConfiguration>
                                     </wkWebView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" bounces="NO" bouncesZoom="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ly8-at-9Jk">
-                                        <rect key="frame" x="0.0" y="318" width="394" height="440"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="Ly8-at-9Jk" firstAttribute="top" secondItem="ONC-sp-8lX" secondAttribute="bottom" constant="10" id="643-2w-xBp"/>
-                                    <constraint firstItem="Ly8-at-9Jk" firstAttribute="leading" secondItem="HaQ-uZ-6iS" secondAttribute="leading" id="DK2-eO-8gY"/>
-                                    <constraint firstItem="ONC-sp-8lX" firstAttribute="top" secondItem="9yY-AW-zr6" secondAttribute="bottom" constant="10" id="Tj3-UO-0DN"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ly8-at-9Jk" secondAttribute="bottom" id="iqQ-XI-p0T"/>
-                                    <constraint firstItem="Ly8-at-9Jk" firstAttribute="top" secondItem="ONC-sp-8lX" secondAttribute="bottom" constant="10" id="irZ-cv-JQj"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ly8-at-9Jk" secondAttribute="trailing" id="pPN-w5-Gac"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="M4o-3N-f12"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="M4o-3N-f12" firstAttribute="trailing" secondItem="HaQ-uZ-6iS" secondAttribute="trailing" constant="10" id="9Vj-ED-cld"/>
-                            <constraint firstItem="HaQ-uZ-6iS" firstAttribute="top" secondItem="M4o-3N-f12" secondAttribute="top" constant="46" id="Gh2-9O-e3z"/>
-                            <constraint firstItem="HaQ-uZ-6iS" firstAttribute="top" secondItem="M4o-3N-f12" secondAttribute="top" constant="46" id="Lfr-hC-HD7"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="HaQ-uZ-6iS" secondAttribute="bottom" constant="10" id="bl2-nq-IQQ"/>
-                            <constraint firstItem="HaQ-uZ-6iS" firstAttribute="leading" secondItem="M4o-3N-f12" secondAttribute="leading" constant="10" id="soh-RH-L09"/>
+                            <constraint firstItem="rDe-3n-w2Y" firstAttribute="leading" secondItem="M4o-3N-f12" secondAttribute="leading" constant="10" id="0Sn-vo-9W9"/>
+                            <constraint firstItem="rDe-3n-w2Y" firstAttribute="centerX" secondItem="Lrc-5q-Xqz" secondAttribute="centerX" id="cqq-yu-yZM"/>
+                            <constraint firstItem="rDe-3n-w2Y" firstAttribute="top" secondItem="Lrc-5q-Xqz" secondAttribute="top" constant="263" id="sUs-W3-EUP"/>
+                            <constraint firstItem="M4o-3N-f12" firstAttribute="trailing" secondItem="rDe-3n-w2Y" secondAttribute="trailing" constant="10" id="vjX-h6-4Lf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="euC-6m-gFR"/>
                     <connections>
                         <outlet property="artistLabel" destination="CUH-r6-ko7" id="olJ-Lj-7p9"/>
-                        <outlet property="songLabel" destination="9yY-AW-zr6" id="KZH-0S-fEl"/>
-                        <outlet property="textView" destination="Ly8-at-9Jk" id="5FS-h1-ncY"/>
                         <outlet property="webView" destination="ONC-sp-8lX" id="MIO-NU-rU7"/>
                     </connections>
                 </viewController>
@@ -348,9 +321,6 @@
     <resources>
         <image name="crowd-1056764.jpg" width="967.67999267578125" height="725.760009765625"/>
         <image name="iphone-1836071.jpg" width="1362" height="907.91998291015625"/>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

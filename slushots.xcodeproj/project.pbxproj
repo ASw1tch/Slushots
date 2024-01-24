@@ -150,10 +150,8 @@
 				BE11ED8B28C2869900374ACE /* Helpers */,
 				BE11ED8A28C2863700374ACE /* Storyboards */,
 				BE11ED8928C2861B00374ACE /* Models */,
-				9D3D6AE128F59D280082E0E9 /* Assets.xcassets */,
-				EA1A906A2B4B17A200B3BE83 /* crowd-1056764.jpg */,
-				EA1A906E2B4B2C4200B3BE83 /* iphone-1836071.jpg */,
 				BE11ED8828C285F500374ACE /* ViewControllers */,
+				EA8A37602B586BB300B72BE2 /* Images */,
 				BE11ED8228C2843600374ACE /* Info.plist */,
 			);
 			path = slushots;
@@ -206,6 +204,16 @@
 				EA1A90712B4B345F00B3BE83 /* YandexResponse.swift */,
 			);
 			path = Yandex;
+			sourceTree = "<group>";
+		};
+		EA8A37602B586BB300B72BE2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9D3D6AE128F59D280082E0E9 /* Assets.xcassets */,
+				EA1A906E2B4B2C4200B3BE83 /* iphone-1836071.jpg */,
+				EA1A906A2B4B17A200B3BE83 /* crowd-1056764.jpg */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
