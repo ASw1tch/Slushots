@@ -16,6 +16,7 @@ class YandexLoginViewController: UIViewController {
     @IBAction func watchButton(_ sender: UIButton) {
         let MediaListVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MediaListViewController") as? MediaListViewController
         MediaListVC?.didEnterOwnerName(loginTextField.text!)
+        MediaListVC?.yandexOwnerName = "\(loginTextField.text!)"
         navigationController?.pushViewController(MediaListVC!, animated: true)
         
     }
@@ -24,7 +25,6 @@ class YandexLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
     }
 }
 

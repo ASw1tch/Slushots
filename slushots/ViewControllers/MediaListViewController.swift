@@ -20,13 +20,13 @@ final class MediaListViewController: UIViewController{
     var yandexVC = YandexLoginViewController()
     var yandexApiCaller = YandexApiCaller()
     var yandexOwnerName = ""
-    var titleToPass = ["YandexMusic", "Spotify"]
+//    var titleToPass = ["YandexMusic", "Spotify"]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchSongs()
-        title = "Me"
+        setTitleName()
         navigationItem.hidesBackButton = true
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.orange]
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "figure.walk.departure"),
@@ -37,8 +37,6 @@ final class MediaListViewController: UIViewController{
         tableView.register(UINib(nibName: "SongCell", bundle: nil), forCellReuseIdentifier: "PlaylistTableViewCell")
         tableView.dataSource = self
         tableView.delegate = self
-        
-        
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -46,7 +44,13 @@ final class MediaListViewController: UIViewController{
         
     }
     
-    
+    func setTitleName() {
+        if yandexOwnerName != "" {
+            title = "My Yandex"
+        } else {
+            title = "My Spotify"
+        }
+    }
     
     func didEnterOwnerName(_ ownerName: String) {
         print("1: \(yandexOwnerName)")
