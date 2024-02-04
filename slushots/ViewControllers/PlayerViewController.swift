@@ -11,12 +11,10 @@ import WebKit
 
 class PlayerViewController: UIViewController {
     
-    
-    
     @IBOutlet private weak var artistLabel: UILabel?
     @IBOutlet private weak var songLabel: UILabel?
     @IBOutlet private weak var webView: WKWebView!
-
+    
     
     var songPassed: String = ""
     var artistPassed: String = ""
@@ -25,23 +23,15 @@ class PlayerViewController: UIViewController {
     var video: YTResponse?
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        prepareVideo()
-        
-        
-        
-    }
-    
-    
     func prepareVideo() {
         
         let songString = String("\(songPassed)"+" \(artistPassed)")
         
-       YTApiCaller.shared.getVideoFromCell(songTitle: songString, completion: fetchVideo(resrponse:))
+        YTApiCaller.shared.getVideoFromCell(songTitle: songString, completion: fetchVideo(resrponse:))
         
     }
     
-
+    
     
     func fetchVideo(resrponse: YTResponse) {
         // Load it into the webView
@@ -61,9 +51,6 @@ class PlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        
-        prepareVideo()
         
         //Check if there's a video
         guard video != nil else {
@@ -84,10 +71,6 @@ class PlayerViewController: UIViewController {
         self.artistPassed = artist
         
     }
-    
-    
-    
-    
     
 }
 

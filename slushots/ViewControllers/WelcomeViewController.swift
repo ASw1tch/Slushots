@@ -9,7 +9,10 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
-    @IBAction private func spotifyButtonPressed(_ sender: UIButton) {
+    @IBAction private func spotifyButtonPressed(_ sender: UIButton){
+    }
+    
+    @IBAction func yandexButtonPressed(_ sender: UIButton) {
     }
     
     let backgroundImageView = UIImageView()
@@ -17,6 +20,7 @@ class WelcomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.hidesBackButton = true
     }
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()

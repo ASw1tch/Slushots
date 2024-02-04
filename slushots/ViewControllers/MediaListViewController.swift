@@ -20,11 +20,13 @@ final class MediaListViewController: UIViewController{
     var yandexVC = YandexLoginViewController()
     var yandexApiCaller = YandexApiCaller()
     var yandexOwnerName = ""
+    var titleToPass = ["YandexMusic", "Spotify"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchSongs()
-        title = "Slushots"
+        title = "Me"
         navigationItem.hidesBackButton = true
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.orange]
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "figure.walk.departure"),
@@ -148,7 +150,7 @@ extension MediaListViewController: UITableViewDelegate {
         }
 
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "PlayerViewController") as? PlayerViewController
-        vc?.prepareVideo()
+        
 
         if let result = result {
             vc?.artistPassed = result.items[indexPath.row].track.artists[indexPath.section].name
@@ -159,7 +161,7 @@ extension MediaListViewController: UITableViewDelegate {
             vc?.artistPassed = track.artists[indexPath.section].name
             vc?.songPassed = track.title
         }
-
+        vc?.prepareVideo()
         navigationController?.pushViewController(vc!, animated: true)
     }
 }
