@@ -7,12 +7,9 @@
 
 import UIKit
 
-
-
 final class MediaListViewController: UIViewController{
     
     @IBOutlet private weak var tableView: UITableView!
-    
     
     var result: SpotifySongResponse?
     var yaResult: YandexSongResponse?
@@ -20,8 +17,7 @@ final class MediaListViewController: UIViewController{
     var yandexVC = YandexLoginViewController()
     var yandexApiCaller = YandexApiCaller()
     var yandexOwnerName = ""
-//    var titleToPass = ["YandexMusic", "Spotify"]
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
