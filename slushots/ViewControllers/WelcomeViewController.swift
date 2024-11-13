@@ -21,7 +21,6 @@ class WelcomeViewController: UIViewController {
         navigationItem.hidesBackButton = true
     }
    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     

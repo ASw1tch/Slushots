@@ -1,0 +1,39 @@
+APP_NAME: &APP_NAME slushots
+DEVELOPMENT_TEAM: &DEVELOPMENT_TEAM PFP266U7G7
+BUNDLE_ID_PREFIX: &BUNDLE_ID_PREFIX aswitch.me
+
+settings:
+  base:
+    CURRENT_PROJECT_VERSION: 1
+    MARKETING_VERSION: "0.1.0"
+    DEVELOPMENT_TEAM: *DEVELOPMENT_TEAM
+    IDEPreferLogStreaming: YES
+
+name: *APP_NAME
+
+options:
+  bundleIdPrefix: *BUNDLE_ID_PREFIX
+  developmentLanguage: en
+  deploymentTarget:
+    iOS: 15.0
+
+targets:
+  *APP_NAME:
+    type: application
+    platform: iOS
+    sources:
+      - path: slushots
+        excludes:
+          - slushots/Sources/Constants.swift
+    info:
+      path: slushots/Info.plist
+      properties:
+        CFBundlePackageType: $(PRODUCT_BUNDLE_PACKAGE_TYPE)
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UILaunchStoryboardName: LaunchScreen
+    settings:
+      base:
+        TARGETED_DEVICE_FAMILY: 1
+        SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: true
+        CODE_SIGN_ENTITLEMENTS: slushots/slushots.CODE_SIGN_ENTITLEMENTS

@@ -14,5 +14,4 @@ struct SPTAuthResponse: Codable {
     let refresh_token: String?
     let scope: String
     let token_type: String
-    
 }

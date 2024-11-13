@@ -1,0 +1,31 @@
+
+# Ignoring sensitive files
+slushots/Sources/Constants.swift
+
+# Ignoring Xcode project settings
+*.xcworkspace
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/
+
+# Ignoring Swift Package Manager files
+.swiftpm/
+Package.resolved
+
+# Ignoring CocoaPods files
+Pods/
+Podfile.lock
+
+# Ignoring Carthage files
+Carthage/
+
+# Ignoring Fastlane files
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# Ignoring environment files
+.env
+
+# Ignoring sensitive files
+slushots/Helpers/Constants.swift

@@ -10,22 +10,32 @@ import Foundation
 final class SPTFApiCaller {
     static let shared = SPTFApiCaller()
     
-    
     init() {}
     
     struct Constants {
-        static let baseAPIURL = URL(string: "https://api.spotify.com/v1/me/tracks?offset=0&limit=50")
+        static let baseAPIURL = "https://api.spotify.com/v1/me/tracks"
+    }
+    
+    func createURL(offset: Int) -> URL? {
+        var components = URLComponents(string: Constants.baseAPIURL)
+        var queryItems = components?.queryItems ?? []
+        queryItems.append(URLQueryItem(name: "limit", value: "50"))
+        queryItems.append(URLQueryItem(name: "offset", value: "\(offset)"))
+        components?.queryItems = queryItems
+        return components?.url
     }
     
     enum APIError: Error {
         case failedToGetData
     }
-    public func getSpotifyPlayList(completion: @escaping (SpotifySongResponse?) -> Void) {
+    
+    public func getSpotifyPlayList(offset: Int = 0, completion: @escaping (SpotifySongResponse?) -> Void) {
         SPTFAuthManager.shared.withValidToken { token in
-            let apiURL = Constants.baseAPIURL
+            let apiURL = self.createURL(offset: offset)
             var request = URLRequest(url: apiURL!)
             request.setValue("Bearer \(token)",
                              forHTTPHeaderField: "Authorization")
+        
             print(token)
             request.httpMethod = "GET"
             request.timeoutInterval = 30
@@ -49,8 +59,6 @@ final class SPTFApiCaller {
                 }
             }
             task.resume()
-            
         }
     }
-    
 }

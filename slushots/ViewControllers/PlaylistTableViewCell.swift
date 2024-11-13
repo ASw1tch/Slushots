@@ -31,14 +31,11 @@ class PlaylistTableViewCell: UITableViewCell {
                 print("There's no data in UIImage")
                 return
             }
-            
-            //Set the imageView
             DispatchQueue.main.async {
                 self.artworkImageView.image = image
             }
         }
         session.resume()
-        
     }
 }
 

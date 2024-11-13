@@ -201,9 +201,6 @@ final class SPTFAuthManager {
         task.resume()
     }
     
-    
-    
-    
     private func cacheToken(result: SPTAuthResponse) {
         UserDefaults.standard.setValue(result.access_token, forKey: "access_token")
         if let refresh_token = result.refresh_token {

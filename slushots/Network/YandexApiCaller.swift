@@ -12,16 +12,12 @@ final class YandexApiCaller {
     
     init() {}
     
-    struct Constants {
-        static var apiURL = "https://music.yandex.ru/handlers/playlist.jsx?kinds=3&light=true&madeFor=&withLikesCount=true&forceLogin=true&lang=ru&external-domain=music.yandex.ru&overembed=false&owner="
-    }
-    
     enum APIError: Error {
         case failedToGetData
     }
     
     public func getYandexPlayList(ownerName: String, completion: @escaping (YandexSongResponse?) -> Void) {
-        let apiURLString = String(format: Constants.apiURL + ownerName)
+        let apiURLString = String(format: K.yandexAPIURL + ownerName)
         print(apiURLString)
         guard let url = URL(string: apiURLString) else {
             completion(nil)
@@ -47,9 +43,6 @@ final class YandexApiCaller {
             }
         }
         task.resume()
-        
     }
-    
-    
 }
 

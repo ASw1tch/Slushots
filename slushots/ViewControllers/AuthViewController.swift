@@ -53,8 +53,6 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
         
         webView.isHidden = true
         
-        
-        
         SPTFAuthManager.shared.exchangeCodeForToken(code: code) { [weak self] success in
             DispatchQueue.main.async {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -68,12 +66,7 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
                 self?.navigationController?.pushViewController(navVC, animated: true)
                 self?.completionHandler?(success)
             }
-            
-            
         }
-        
-        
     }
-    
 }
 

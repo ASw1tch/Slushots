@@ -26,11 +26,8 @@ class YandexLoginViewController: UIViewController {
             navigationController?.pushViewController(MediaListVC!, animated: true)
         }
     }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }
 
