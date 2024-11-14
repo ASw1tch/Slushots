@@ -1,6 +1,6 @@
 APP_NAME: &APP_NAME slushots
-DEVELOPMENT_TEAM: &DEVELOPMENT_TEAM PFP266U7G7
-BUNDLE_ID_PREFIX: &BUNDLE_ID_PREFIX aswitch.me
+DEVELOPMENT_TEAM: &DEVELOPMENT_TEAM Anatolii Petrov PFP266U7G7
+BUNDLE_ID_PREFIX: &BUNDLE_ID_PREFIX me.aswitch
 
 settings:
   base:
@@ -23,17 +23,22 @@ targets:
     platform: iOS
     sources:
       - path: slushots
-        excludes:
-          - slushots/Sources/Constants.swift
     info:
       path: slushots/Info.plist
       properties:
-        CFBundlePackageType: $(PRODUCT_BUNDLE_PACKAGE_TYPE)
-        CFBundleShortVersionString: "$(MARKETING_VERSION)"
-        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
         UILaunchStoryboardName: LaunchScreen
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
+                UISceneStoryboardFile: Main
     settings:
       base:
         TARGETED_DEVICE_FAMILY: 1
         SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: true
-        CODE_SIGN_ENTITLEMENTS: slushots/slushots.CODE_SIGN_ENTITLEMENTS
+      
