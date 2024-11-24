@@ -1,11 +1,11 @@
 APP_NAME: &APP_NAME slushots
-DEVELOPMENT_TEAM: &DEVELOPMENT_TEAM Anatolii Petrov PFP266U7G7
-BUNDLE_ID_PREFIX: &BUNDLE_ID_PREFIX me.aswitch
+DEVELOPMENT_TEAM: &DEVELOPMENT_TEAM PFP266U7G7
+BUNDLE_ID_PREFIX: &BUNDLE_ID_PREFIX aswitch.me
 
 settings:
   base:
-    CURRENT_PROJECT_VERSION: 1
-    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: 4
+    MARKETING_VERSION: "1.1.2"
     DEVELOPMENT_TEAM: *DEVELOPMENT_TEAM
     IDEPreferLogStreaming: YES
 
@@ -27,8 +27,8 @@ targets:
       path: slushots/Info.plist
       properties:
         CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
-        CFBundleShortVersionString: "1.0"
-        CFBundleVersion: "1"
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         UILaunchStoryboardName: LaunchScreen
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false

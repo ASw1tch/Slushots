@@ -20,11 +20,10 @@ class PlaylistTableViewCell: UITableViewCell {
         let session = URLSession.shared.dataTask(with: urlString) { data, response, error in
             if error == nil && data != nil {
                 
-                CacheManager.setSongCache(urlString.absoluteString, data)
-                if urlString.absoluteString != url.absoluteString {
-                    
-                    return
-                }
+//                CacheManager.setSongCache(urlString.absoluteString, data)
+//                if urlString.absoluteString != url.absoluteString {
+//                    return
+//                }
             }
             
             guard let image = UIImage(data: data ?? Data(count: 0) ) else {
@@ -32,7 +31,7 @@ class PlaylistTableViewCell: UITableViewCell {
                 return
             }
             DispatchQueue.main.async {
-                self.artworkImageView.image = image
+                self.artworkImageView.image = UIImage(systemName: "music.mic.circle")
             }
         }
         session.resume()

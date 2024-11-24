@@ -8,9 +8,6 @@
 import Foundation
 import UIKit
 
-
-
-
 class YandexLoginViewController: UIViewController {
  
     @IBOutlet weak var loginTextField: UITextField!
@@ -28,6 +25,15 @@ class YandexLoginViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupDismissKeyboardGesture()
+    }
+    private func setupDismissKeyboardGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
-

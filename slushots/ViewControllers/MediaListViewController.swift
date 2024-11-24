@@ -94,8 +94,8 @@ final class MediaListViewController: UIViewController{
     }
     
     @objc private func signOutTapped() {
-        let alert = UIAlertController(title: "Sign Out",
-                                      message: "Are you sure?",
+        let alert = UIAlertController(title: "Sign Out and Delete All The Data",
+                                      message: "This action will sign out from your streaming account and delete all the data from your phone. Do you want to proceed?",
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { _ in
@@ -148,7 +148,6 @@ extension MediaListViewController: UITableViewDataSource {
             }
         } else if let yaResult = yaResult {
             let coverPrepared = String("https://" + yaResult.playlist.tracks[indexPath.row].coverUri.dropLast(2) + "400x400")
-            
             cell.songLabel.text = yaResult.playlist.tracks[indexPath.row].title
             cell.artistLabel.text = yaResult.playlist.tracks[indexPath.row].artists[indexPath.section].name
             cell.getImage(url: URL(string: coverPrepared)!)
