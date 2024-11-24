@@ -7,20 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0262E637914713E05271182C /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E483981F8B66B18B19E84F /* UserDefaultsManager.swift */; };
 		03435605851E9365D74D6F5E /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EC6876D8722A9DE056BB75 /* Track.swift */; };
 		0AE41293479060459C239495 /* iphone-1836071.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AFFF3220344BA573E804718 /* iphone-1836071.jpg */; };
 		12944C7EA24B05828DD78B65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43FB765450FBA88961FACA2C /* LaunchScreen.storyboard */; };
 		202C4B954C1337732E174307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E34BF4EB36BB75997B148 /* AppDelegate.swift */; };
 		20E43C80CAC0E31F92D0995E /* SPTFAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59729535AC86800CAB2E1467 /* SPTFAuthManager.swift */; };
 		2623B1BDEA01294372BC0AD8 /* YandexLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D52DD61A960DAA5D2D21F9 /* YandexLoginViewController.swift */; };
+		2AD256E6E1EAF7F1431C2EA6 /* spotifyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BED84559EAD5202DCF0ECC8 /* spotifyLogo.png */; };
 		2C0AC56CCC4B247377E83001 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D625696C90DFE4773FB3BE40 /* Constants.swift */; };
 		360ECAB13584EA2A3BAA739F /* STPFAuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20EF81816B6C85862263CE8 /* STPFAuthResponse.swift */; };
 		3881505CAEE013D63605F05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED13FEB94EB7283CC56C5872 /* Assets.xcassets */; };
 		498E596B1D0A58625314B8E1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D64272932C96509EDB88F /* WelcomeViewController.swift */; };
 		58E0A8EEC50FE4DBC2E6EC94 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C9B55FE0F880822D4E411 /* PlayerViewController.swift */; };
+		5AAFFCC491DA8DDBD88135F6 /* yandexLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5243E5748A6A30FA35516D2F /* yandexLogo.png */; };
 		5F415258B477AA285B147966 /* YTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51874F0C7F8E5641D28288B /* YTResponse.swift */; };
 		69476249716B47327066ED70 /* YandexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ABDD44C6B3AC31A16A3D95 /* YandexResponse.swift */; };
 		7B49F50E708C1056ECAD850B /* SPTFResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5111857DE47BD8A58AE020 /* SPTFResponse.swift */; };
+		890746BA2502770D551EB49F /* ColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7386A7B5D134900387E30F19 /* ColorExtention.swift */; };
 		8AC50B59BCB2A3000EAE2768 /* YTApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2530209048A77CC3CA35587A /* YTApiCaller.swift */; };
 		8E89A6123FC6B727C7E62B7F /* crowd-1056764.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BD37382D80C5F0C8DCD3155 /* crowd-1056764.jpg */; };
 		8F01E5FE1A6CF3193AE96DA1 /* YandexApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D3100E6C8333614D0D7041 /* YandexApiCaller.swift */; };
@@ -50,13 +54,17 @@
 		2AA40420DB52307274430B6A /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
 		4493FAD108BF9F4313D170E8 /* MediaListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListViewController.swift; sourceTree = "<group>"; };
 		44D593C30644B0B97D153630 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5243E5748A6A30FA35516D2F /* yandexLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yandexLogo.png; sourceTree = "<group>"; };
 		59729535AC86800CAB2E1467 /* SPTFAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTFAuthManager.swift; sourceTree = "<group>"; };
 		6350B05678AF3594914ECE41 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		71E483981F8B66B18B19E84F /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		722C9B55FE0F880822D4E411 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		7386A7B5D134900387E30F19 /* ColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtention.swift; sourceTree = "<group>"; };
 		7BD37382D80C5F0C8DCD3155 /* crowd-1056764.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "crowd-1056764.jpg"; sourceTree = "<group>"; };
 		8AFFF3220344BA573E804718 /* iphone-1836071.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "iphone-1836071.jpg"; sourceTree = "<group>"; };
 		8FEBDBBDDF1B3EBD076E932B /* YTSnippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTSnippet.swift; sourceTree = "<group>"; };
 		95DEC735D26299184271CF2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9BED84559EAD5202DCF0ECC8 /* spotifyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spotifyLogo.png; sourceTree = "<group>"; };
 		9C6D64272932C96509EDB88F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		A1ABDD44C6B3AC31A16A3D95 /* YandexResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexResponse.swift; sourceTree = "<group>"; };
 		AC86D30D8B27D3C7F151C905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +100,8 @@
 				ED13FEB94EB7283CC56C5872 /* Assets.xcassets */,
 				7BD37382D80C5F0C8DCD3155 /* crowd-1056764.jpg */,
 				8AFFF3220344BA573E804718 /* iphone-1836071.jpg */,
+				9BED84559EAD5202DCF0ECC8 /* spotifyLogo.png */,
+				5243E5748A6A30FA35516D2F /* yandexLogo.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -122,7 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				6350B05678AF3594914ECE41 /* CacheManager.swift */,
+				7386A7B5D134900387E30F19 /* ColorExtention.swift */,
 				D625696C90DFE4773FB3BE40 /* Constants.swift */,
+				71E483981F8B66B18B19E84F /* UserDefaultsManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -261,6 +273,8 @@
 				BB36EAAAD12805F1B6C026E6 /* Main.storyboard in Resources */,
 				8E89A6123FC6B727C7E62B7F /* crowd-1056764.jpg in Resources */,
 				0AE41293479060459C239495 /* iphone-1836071.jpg in Resources */,
+				2AD256E6E1EAF7F1431C2EA6 /* spotifyLogo.png in Resources */,
+				5AAFFCC491DA8DDBD88135F6 /* yandexLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +289,7 @@
 				BD1F4F5019B66816CACC29D9 /* Artist.swift in Sources */,
 				9B43B09F91ACE1449999DC08 /* AuthViewController.swift in Sources */,
 				C65285EB4107AC8451CC5D65 /* CacheManager.swift in Sources */,
+				890746BA2502770D551EB49F /* ColorExtention.swift in Sources */,
 				2C0AC56CCC4B247377E83001 /* Constants.swift in Sources */,
 				AC582A6C7F2AC9C6BC781058 /* Image.swift in Sources */,
 				F7FA2B450B28E58B6F7A840D /* MediaListViewController.swift in Sources */,
@@ -287,6 +302,7 @@
 				94CFB79CDD8F1D6A60A09755 /* SceneDelegate.swift in Sources */,
 				ABF70F7D60B2AB6807879D53 /* SignOut.swift in Sources */,
 				03435605851E9365D74D6F5E /* Track.swift in Sources */,
+				0262E637914713E05271182C /* UserDefaultsManager.swift in Sources */,
 				498E596B1D0A58625314B8E1 /* WelcomeViewController.swift in Sources */,
 				8AC50B59BCB2A3000EAE2768 /* YTApiCaller.swift in Sources */,
 				5F415258B477AA285B147966 /* YTResponse.swift in Sources */,
@@ -372,7 +388,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = PFP266U7G7;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -393,7 +409,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IDEPreferLogStreaming = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -457,7 +473,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = PFP266U7G7;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -472,7 +488,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IDEPreferLogStreaming = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

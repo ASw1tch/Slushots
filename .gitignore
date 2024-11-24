@@ -1,6 +1,7 @@
 
 # Ignoring sensitive files
 slushots/Sources/Constants.swift
+slushots/Helpers/Constants.swift
 
 # Ignoring Xcode project settings
 *.xcworkspace

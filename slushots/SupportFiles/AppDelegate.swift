@@ -26,10 +26,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.rootViewController = navigationController
         }
         else {
-            let navVC = UINavigationController(rootViewController: WelcomeViewController())
-            window.rootViewController = navVC
+            if let yandexUser = UserDefaultsManager.shared.getYandexUser() {
+                print("Yandex User: \(yandexUser)") // Проверяем, что пользователь есть
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                guard let mediaListVC = storyboard.instantiateViewController(identifier: "MediaListViewController") as? MediaListViewController else {
+                    print("Error: Could not instantiate MediaListViewController")
+                    return false
+                }
+                print("MediaListViewController successfully instantiated")
+                mediaListVC.yandexOwnerName = "\(yandexUser)"
+                
+                let navigationController = UINavigationController(rootViewController: mediaListVC)
+                window.rootViewController = navigationController
+            } else {
+                print("No Yandex User and no Spotify session found")
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                guard let welcomeVC = storyboard.instantiateViewController(identifier: "WelcomeViewController") as? WelcomeViewController else {
+                    print("Error: Could not instantiate WelcomeViewController")
+                    return false
+                }
+                let navVC = UINavigationController(rootViewController: WelcomeViewController())
+                window.rootViewController = navVC
+            }
         }
-        
         window.makeKeyAndVisible()
         return true
     }

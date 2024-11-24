@@ -26,10 +26,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.rootViewController = navigationController
             
         }
-        else {
-            let navVC = UINavigationController(rootViewController: WelcomeViewController())
+        else if let yandexUser = UserDefaultsManager.shared.getYandexUser() {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let mediaListVC = storyboard.instantiateViewController(identifier: "MediaListViewController") as? MediaListViewController else {
+                print("Error: Could not instantiate MediaListViewController")
+                return
+            }
+            mediaListVC.yandexOwnerName = "\(yandexUser)"
+            let navigationController = UINavigationController(rootViewController: mediaListVC)
+            window.rootViewController = navigationController
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let welcomeVC = storyboard.instantiateViewController(identifier: "WelcomeViewController") as? WelcomeViewController else {
+                print("Error: Could not instantiate WelcomeViewController")
+                return
+            }
+            let navVC = UINavigationController(rootViewController: welcomeVC)
             window.rootViewController = navVC
-            return
         }
         
         window.makeKeyAndVisible()
