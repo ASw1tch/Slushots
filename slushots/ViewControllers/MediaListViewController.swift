@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class MediaListViewController: UIViewController{
     
@@ -25,6 +26,7 @@ final class MediaListViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchSongs(offset: 0)
+        loadMediaData()
         setTitleName()
         navigationItem.hidesBackButton = true
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.orange]
@@ -43,24 +45,63 @@ final class MediaListViewController: UIViewController{
         
     }
     
-    func setTitleName() {
-        if yandexOwnerName != "" {
-            title = "My Yandex"
+    func loadMediaData() {
+        if UserDefaultsManager.shared.getYandexUser() != nil {
+            fetchYandexSongs()
         } else {
-            title = "My Spotify"
+            fetchSongs(offset: 0)
         }
     }
     
+    func setTitleName() {
+        let titleLabel = UILabel()
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        titleLabel.textAlignment = .center
+        
+        let logoImageView = UIImageView()
+        logoImageView.contentMode = .scaleAspectFit
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        if yandexOwnerName != "" {
+            titleLabel.text = "Powered by Yandex"
+            titleLabel.textColor = .red
+            logoImageView.image = UIImage(named: "yandexLogo")
+        } else {
+            titleLabel.text = "Powered by Spotify"
+            titleLabel.textColor = UIColor(Color(hex: "#65d46e"))
+            logoImageView.image = UIImage(named: "spotifyLogo")
+        }
+        
+        let stackView = UIStackView(arrangedSubviews: [titleLabel, logoImageView])
+        stackView.axis = .horizontal
+        stackView.spacing = 5
+        stackView.alignment = .center
+        stackView.distribution = .fill
+        
+        NSLayoutConstraint.activate([
+            logoImageView.widthAnchor.constraint(equalToConstant: 20),
+            logoImageView.heightAnchor.constraint(equalToConstant: 20)
+            
+        ])
+        
+        navigationItem.titleView = stackView
+        navigationItem.title = "My playlist"
+        
+    }
+    
     func didEnterOwnerName(_ ownerName: String) {
-        print("1: \(yandexOwnerName)")
-        print("2: \(ownerName)")
-        yandexApiCaller.getYandexPlayList(ownerName: ownerName) { result in
+        UserDefaultsManager.shared.saveYandexUser(ownerName)
+    }
+    
+    func fetchYandexSongs() {
+        let ownerName = UserDefaultsManager.shared.getYandexUser()
+        yandexApiCaller.getYandexPlayList(ownerName: ownerName!) { result in
             DispatchQueue.main.async {
                 self.yaResult = result
                 self.tableView.reloadData()
             }
         }
-        }
+    }
     
     func fetchSongs(offset: Int) {
         guard !isLoading else { return }
@@ -72,17 +113,10 @@ final class MediaListViewController: UIViewController{
                 self.isLoading = false
                 
                 if let response = result {
-                    // Добавляем новые элементы (Item) в общий массив
                     let newItems = response.items
                     self.allItems.append(contentsOf: newItems)
-                    
-                    // Обновляем количество загруженных треков
                     self.totalLoadedTracks += newItems.count
-                    
-                    // Обновляем таблицу
                     self.tableView.reloadData()
-                    
-                    // Проверяем, если новые треки закончились
                     if newItems.isEmpty {
                         print("Все треки загружены")
                     }
@@ -101,6 +135,7 @@ final class MediaListViewController: UIViewController{
         alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { _ in
             SPTFAuthManager.shared.signOut { [weak self] signedOut in
                 if signedOut {
+                    UserDefaultsManager.shared.resetAllValues()
                     DispatchQueue.main.async {
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         _ = UINavigationController(rootViewController: WelcomeViewController())
