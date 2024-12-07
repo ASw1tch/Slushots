@@ -47,7 +47,7 @@ final class MediaListViewController: UIViewController{
     
     func loadMediaData() {
         if UserDefaultsManager.shared.getYandexUser() != nil {
-            fetchYandexSongs()
+//            fetchYandexSongs()
         } else {
             fetchSongs(offset: 0)
         }
@@ -93,16 +93,6 @@ final class MediaListViewController: UIViewController{
         UserDefaultsManager.shared.saveYandexUser(ownerName)
     }
     
-    func fetchYandexSongs() {
-        let ownerName = UserDefaultsManager.shared.getYandexUser()
-        yandexApiCaller.getYandexPlayList(ownerName: ownerName!) { result in
-            DispatchQueue.main.async {
-                self.yaResult = result
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
     func fetchSongs(offset: Int) {
         guard !isLoading else { return }
         isLoading = true
@@ -128,8 +118,8 @@ final class MediaListViewController: UIViewController{
     }
     
     @objc private func signOutTapped() {
-        let alert = UIAlertController(title: "Sign Out and Delete All The Data",
-                                      message: "This action will sign out from your streaming account and delete all the data from your phone. Do you want to proceed?",
+        let alert = UIAlertController(title: "Sign Out and Remove All The Data",
+                                      message: "This action will sign out from your streaming account and delete all the data assosiated with this account from your phone. Do you want to proceed?",
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { _ in

@@ -25,6 +25,5 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
     
     }
-
 }
 
