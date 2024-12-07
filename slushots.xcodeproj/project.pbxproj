@@ -38,6 +38,7 @@
 		BB36EAAAD12805F1B6C026E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED6C8A10B51EAC8CEDD1E7C /* Main.storyboard */; };
 		BD1F4F5019B66816CACC29D9 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23093200BF83DEAD7322EF66 /* Artist.swift */; };
 		C65285EB4107AC8451CC5D65 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350B05678AF3594914ECE41 /* CacheManager.swift */; };
+		EADEF01D2D04CDB1001A64CD /* NoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADEF01C2D04CDB1001A64CD /* NoResultsView.swift */; };
 		F7FA2B450B28E58B6F7A840D /* MediaListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4493FAD108BF9F4313D170E8 /* MediaListViewController.swift */; };
 		F9E63BA9A3975E0D1F3F514D /* YT_ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1829665355D6E65537F170 /* YT_ID.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		DB0D490A52FB877F68D603F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DC1829665355D6E65537F170 /* YT_ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YT_ID.swift; sourceTree = "<group>"; };
 		E51874F0C7F8E5641D28288B /* YTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTResponse.swift; sourceTree = "<group>"; };
+		EADEF01C2D04CDB1001A64CD /* NoResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoResultsView.swift; path = Slushots/ViewControllers/NoResultsView.swift; sourceTree = SOURCE_ROOT; };
 		EB5111857DE47BD8A58AE020 /* SPTFResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTFResponse.swift; sourceTree = "<group>"; };
 		ED13FEB94EB7283CC56C5872 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6D50BC0CE04824697869FF7 /* SignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOut.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				2AA40420DB52307274430B6A /* PlaylistTableViewCell.swift */,
 				9C6D64272932C96509EDB88F /* WelcomeViewController.swift */,
 				B8D52DD61A960DAA5D2D21F9 /* YandexLoginViewController.swift */,
+				EADEF01C2D04CDB1001A64CD /* NoResultsView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				202C4B954C1337732E174307 /* AppDelegate.swift in Sources */,
 				BD1F4F5019B66816CACC29D9 /* Artist.swift in Sources */,
 				9B43B09F91ACE1449999DC08 /* AuthViewController.swift in Sources */,
+				EADEF01D2D04CDB1001A64CD /* NoResultsView.swift in Sources */,
 				C65285EB4107AC8451CC5D65 /* CacheManager.swift in Sources */,
 				890746BA2502770D551EB49F /* ColorExtention.swift in Sources */,
 				2C0AC56CCC4B247377E83001 /* Constants.swift in Sources */,
@@ -388,7 +392,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = PFP266U7G7;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -409,7 +413,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IDEPreferLogStreaming = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -473,7 +477,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = PFP266U7G7;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -488,7 +492,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IDEPreferLogStreaming = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

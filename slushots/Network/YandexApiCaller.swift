@@ -8,40 +8,32 @@
 import Foundation
 
 final class YandexApiCaller {
-    static let shared = YandexApiCaller()
-    
-    init() {}
-    
-    enum APIError: Error {
-        case failedToGetData
-    }
-    
-    public func getYandexPlayList(ownerName: String, completion: @escaping (YandexSongResponse?) -> Void) {
-        let apiURLString = String(format: K.yandexAPIURL + ownerName)
-        print(apiURLString)
-        guard let url = URL(string: apiURLString) else {
-            completion(nil)
+    func getYandexPlayList(ownerName: String, completion: @escaping (Result<YandexSongResponse, Error>) -> Void) {
+        let url = String(format: K.yandexAPIURL + ownerName)
+        guard let requestURL = URL(string: url) else {
+            completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
             return
         }
         
-        let request = URLRequest(url: url)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if error != nil || data == nil {
-                completion(nil)
+        let task = URLSession.shared.dataTask(with: requestURL) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
                 return
             }
+            
+            guard let data = data else {
+                completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "No data received"])))
+                return
+            }
+            
             do {
-                let decoder = JSONDecoder()
-                let response = try decoder.decode(YandexSongResponse.self, from: data!)
-                print(response)
-                completion(response)
-            }
-            catch {
-                completion(nil)
-                print("Couldn't decode data")
-                return
+                let result = try JSONDecoder().decode(YandexSongResponse.self, from: data)
+                completion(.success(result))
+            } catch {
+                completion(.failure(error))
             }
         }
+        
         task.resume()
     }
 }
