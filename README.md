@@ -1,4 +1,4 @@
-# Slushots
+# ProSlushots
 Explore the video of your favorite song
 Works with Spotify and YandexMusic.
 
