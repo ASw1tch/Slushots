@@ -22,10 +22,10 @@ final class MediaListViewController: UIViewController{
     private var allItems: [Item] = []
     private var totalLoadedTracks = 0
     private var isLoading = false
+    var showCovers: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchSongs(offset: 0)
         loadMediaData()
         setTitleName()
         navigationItem.hidesBackButton = true
@@ -47,7 +47,8 @@ final class MediaListViewController: UIViewController{
     
     func loadMediaData() {
         if UserDefaultsManager.shared.getYandexUser() != nil {
-//            fetchYandexSongs()
+            guard let yaOwnerName = UserDefaultsManager.shared.getYandexUser() else { return }
+            fetchYandexSongs(ownerName: yaOwnerName)
         } else {
             fetchSongs(offset: 0)
         }
@@ -87,10 +88,27 @@ final class MediaListViewController: UIViewController{
         navigationItem.titleView = stackView
         navigationItem.title = "My playlist"
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(secretFunctionGesture))
+        tapGesture.numberOfTapsRequired = 10
+        stackView.addGestureRecognizer(tapGesture)
     }
     
     func didEnterOwnerName(_ ownerName: String) {
         UserDefaultsManager.shared.saveYandexUser(ownerName)
+    }
+    
+    func fetchYandexSongs(ownerName: String) {
+        yandexApiCaller.getYandexPlayList(ownerName: ownerName) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let yaResult):
+                    self.yaResult = yaResult
+                    self.tableView.reloadData()
+                case .failure(let error):
+                    print("There's some error: \(error.localizedDescription)")
+                }
+            }
+        }
     }
     
     func fetchSongs(offset: Int) {
@@ -115,6 +133,48 @@ final class MediaListViewController: UIViewController{
                 }
             }
         }
+    }
+    
+    @objc private func secretFunctionGesture() {
+        let alert = UIAlertController(title: "Enter Password",
+                                      message: "Please enter the password to activate the secret feature.",
+                                      preferredStyle: .alert)
+        
+        alert.addTextField { textField in
+            textField.placeholder = "Enter password"
+            textField.isSecureTextEntry = true
+        }
+        
+        let confirmAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            if let password = alert.textFields?.first?.text, self.isValidPassword(password) {
+                self.showCovers.toggle()
+                self.tableView.reloadData()
+                    
+                
+                let successAlert = UIAlertController(title: "Success",
+                                                     message: "Secret feature is now active!",
+                                                     preferredStyle: .alert)
+                successAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(successAlert, animated: true)
+            } else {
+                let errorAlert = UIAlertController(title: "Error",
+                                                   message: "Incorrect password. Please try again.",
+                                                   preferredStyle: .alert)
+                errorAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(errorAlert, animated: true)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(confirmAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
+    }
+    
+    private func isValidPassword(_ password: String) -> Bool {
+        return password == K.password
     }
     
     @objc private func signOutTapped() {
@@ -148,7 +208,6 @@ final class MediaListViewController: UIViewController{
 }
 
 extension MediaListViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if !allItems.isEmpty {
             return allItems.count
@@ -160,24 +219,69 @@ extension MediaListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath) as? PlaylistTableViewCell else {
-            fatalError("Failed to dequeue PlaylistTableViewCell")
-        }
-        
-        if !allItems.isEmpty {
-            let item = allItems[indexPath.row]
-            cell.songLabel.text = item.track.name
-            cell.artistLabel.text = item.track.artists.first?.name
-            if let imageUrl = URL(string: item.track.album.images.first?.url ?? "") {
-                cell.getImage(url: imageUrl)
+        if #available(iOS 16.0, *) {
+            let cell = UITableViewCell()
+            
+            if !allItems.isEmpty {
+                let item = allItems[indexPath.row]
+                let song = item.track.name
+                let artist = item.track.artists.first?.name ?? "Unknown Artist"
+                
+                let imageUrl: URL? = showCovers ? URL(string: item.track.album.images.first?.url ?? "") : nil
+                let isImageUrlInvalid = (imageUrl == nil || imageUrl?.absoluteString.isEmpty == true)
+                
+                cell.contentConfiguration = UIHostingConfiguration {
+                    PlaylistCellView(song: song,
+                                     artist: artist,
+                                     imageUrl: showCovers && !isImageUrlInvalid ? imageUrl : nil)
+                }
+            } else if let yaResult = yaResult {
+                let track = yaResult.playlist.tracks[indexPath.row]
+                let song = track.title
+                let artist = track.artists.first?.name ?? "Unknown Artist"
+                
+                // Формируем URL для обложки, если включены обложки
+                let coverPrepared = String("https://" + track.coverUri.dropLast(2) + "400x400")
+                let imageUrl: URL? = showCovers ? URL(string: coverPrepared) : nil
+                let isImageUrlInvalid = (imageUrl == nil || imageUrl?.absoluteString.isEmpty == true)
+                
+                cell.contentConfiguration = UIHostingConfiguration {
+                    PlaylistCellView(song: song,
+                                     artist: artist,
+                                     imageUrl: showCovers && !isImageUrlInvalid ? imageUrl : nil)
+                }
             }
-        } else if let yaResult = yaResult {
-            let coverPrepared = String("https://" + yaResult.playlist.tracks[indexPath.row].coverUri.dropLast(2) + "400x400")
-            cell.songLabel.text = yaResult.playlist.tracks[indexPath.row].title
-            cell.artistLabel.text = yaResult.playlist.tracks[indexPath.row].artists[indexPath.section].name
-            cell.getImage(url: URL(string: coverPrepared)!)
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath) as? PlaylistTableViewCell else {
+                fatalError("Failed to dequeue PlaylistTableViewCell")
+            }
+            
+            if !allItems.isEmpty {
+                let item = allItems[indexPath.row]
+                cell.songLabel.text = item.track.name
+                cell.artistLabel.text = item.track.artists.first?.name
+                
+                if showCovers, let imageUrl = URL(string: item.track.album.images.first?.url ?? "") {
+                    cell.getImage(url: imageUrl)
+                } else {
+                    cell.songLabel.text = item.track.name
+                    cell.artistLabel.text = item.track.artists.first?.name ?? "Unknown Artist"
+                    cell.imageView?.image = nil
+                }
+            } else if let yaResult = yaResult {
+                let track = yaResult.playlist.tracks[indexPath.row]
+                let coverPrepared = String("https://" + track.coverUri.dropLast(2) + "400x400")
+                if showCovers {
+                    cell.getImage(url: URL(string: coverPrepared)!)
+                } else {
+                    cell.songLabel.text = track.title
+                    cell.artistLabel.text = track.artists.first?.name ?? "Unknown Artist"
+                    cell.imageView?.image = nil
+                }
+            }
+            return cell
         }
-        return cell
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

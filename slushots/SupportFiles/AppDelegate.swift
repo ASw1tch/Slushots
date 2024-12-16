@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } else {
                 print("No Yandex User and no Spotify session found")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                guard let welcomeVC = storyboard.instantiateViewController(identifier: "WelcomeViewController") as? WelcomeViewController else {
+                guard let _ = storyboard.instantiateViewController(identifier: "WelcomeViewController") as? WelcomeViewController else {
                     print("Error: Could not instantiate WelcomeViewController")
                     return false
                 }
