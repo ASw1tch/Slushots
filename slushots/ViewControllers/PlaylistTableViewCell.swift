@@ -19,11 +19,10 @@ class PlaylistTableViewCell: UITableViewCell {
         let urlString = url
         let session = URLSession.shared.dataTask(with: urlString) { data, response, error in
             if error == nil && data != nil {
-                
-//                CacheManager.setSongCache(urlString.absoluteString, data)
-//                if urlString.absoluteString != url.absoluteString {
-//                    return
-//                }
+                CacheManager.setSongCache(urlString.absoluteString, data)
+                if urlString.absoluteString != url.absoluteString {
+                    return
+                }
             }
             
             guard let _ = UIImage(data: data ?? Data(count: 0) ) else {

@@ -15,7 +15,13 @@ final class YandexApiCaller {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: requestURL) { data, response, error in
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 120 
+        configuration.timeoutIntervalForResource = 300
+        
+        let session = URLSession(configuration: configuration)
+        
+        let task = session.dataTask(with: requestURL) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return
