@@ -1,11 +1,9 @@
 //
 //  PlaylistCellView.swift
 //  slushots
-//
+// 
 //  Created by Anatoliy Petrov on 16.12.24..
 //
-
-
 import SwiftUI
 
 struct PlaylistCellView: View {
@@ -15,25 +13,44 @@ struct PlaylistCellView: View {
     
     let emojiFull = EmojiFile.emojis
     
-
     var body: some View {
         HStack {
-            AsyncImage(url: imageUrl) { phase in
-                if let image = phase.image {
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 50, height: 50)
-                        .cornerRadius(8)
-                } else {
-                    Text(emojiFull[Int.random(in: 0..<emojiFull.count)])
-                        .font(.largeTitle)
-                        .frame(width: 50, height: 50)
-                        .background(Color.gray.opacity(0.1))
-                        .cornerRadius(8)
-                        //.padding()
+            if let cachedData = CacheManager.getSongCache(imageUrl?.absoluteString ?? ""),
+               let uiImage = UIImage(data: cachedData) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 50, height: 50)
+                    .cornerRadius(8)
+            } else {
+                AsyncImage(url: imageUrl) { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 50, height: 50)
+                            .cornerRadius(8)
+                            .onAppear {
+                                if let data = image.asUIImage()?.jpegData(compressionQuality: 0.1),
+                                   let url = imageUrl?.absoluteString {
+                                    CacheManager.setSongCache(url, data)
+                                }
+                            }
+                    } else if phase.error != nil {
+                        Text("❌")
+                            .frame(width: 50, height: 50)
+                            .background(Color.red.opacity(0.1))
+                            .cornerRadius(8)
+                    } else {
+                        Text(emojiFull[Int.random(in: 0..<emojiFull.count)])
+                            .font(.largeTitle)
+                            .frame(width: 50, height: 50)
+                            .background(Color.gray.opacity(0.1))
+                            .cornerRadius(8)
+                    }
                 }
             }
+            
             VStack(alignment: .leading) {
                 Text(song)
                     .font(.headline)
@@ -45,6 +62,22 @@ struct PlaylistCellView: View {
             Spacer()
         }
         .padding(.vertical, 8)
+    }
+}
+
+extension Image {
+    func asUIImage() -> UIImage? {
+        let controller = UIHostingController(rootView: self)
+        let view = controller.view
+        
+        let targetSize = CGSize(width: 400, height: 400)
+        view?.bounds = CGRect(origin: .zero, size: targetSize)
+        view?.backgroundColor = .clear
+        
+        let renderer = UIGraphicsImageRenderer(size: targetSize)
+        return renderer.image { _ in
+            view?.drawHierarchy(in: controller.view.bounds, afterScreenUpdates: true)
+        }
     }
 }
 

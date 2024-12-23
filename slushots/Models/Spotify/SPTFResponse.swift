@@ -18,7 +18,7 @@ struct Item: Codable {
 }
 
 struct Album: Codable {
-    var images: [Image]
+    var images: [ImageCover]
 }
 
 

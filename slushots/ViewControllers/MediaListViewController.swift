@@ -39,7 +39,7 @@ final class MediaListViewController: UIViewController{
         tableView.dataSource = self
         tableView.delegate = self
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -150,7 +150,7 @@ final class MediaListViewController: UIViewController{
             if let password = alert.textFields?.first?.text, self.isValidPassword(password) {
                 self.showCovers.toggle()
                 self.tableView.reloadData()
-                    
+                
                 
                 let successAlert = UIAlertController(title: "Success",
                                                      message: "Secret feature is now active!",
@@ -241,7 +241,7 @@ extension MediaListViewController: UITableViewDataSource {
                 let artist = track.artists.first?.name ?? "Unknown Artist"
                 
                 // Формируем URL для обложки, если включены обложки
-                let coverPrepared = String("https://" + track.coverUri.dropLast(2) + "400x400")
+                let coverPrepared = String("https://" + (track.coverUri ?? "").dropLast(2) + "400x400")
                 let imageUrl: URL? = showCovers ? URL(string: coverPrepared) : nil
                 let isImageUrlInvalid = (imageUrl == nil || imageUrl?.absoluteString.isEmpty == true)
                 
@@ -271,7 +271,7 @@ extension MediaListViewController: UITableViewDataSource {
                 }
             } else if let yaResult = yaResult {
                 let track = yaResult.playlist.tracks[indexPath.row]
-                let coverPrepared = String("https://" + track.coverUri.dropLast(2) + "400x400")
+                let coverPrepared = String("https://" + (track.coverUri ?? "").dropLast(2) + "400x400")
                 if showCovers {
                     cell.getImage(url: URL(string: coverPrepared)!)
                 } else {
@@ -300,7 +300,7 @@ extension MediaListViewController: UITableViewDelegate {
         } else if let yaResult = yaResult {
             _ = yaResult.playlist.tracks[indexPath.row]
         }
-
+        
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "PlayerViewController") as? PlayerViewController
         
         if !allItems.isEmpty {
@@ -309,7 +309,7 @@ extension MediaListViewController: UITableViewDelegate {
             vc?.songPassed = item.track.artists.first?.name ?? ""
         } else if let yaResult = yaResult {
             let track = yaResult.playlist.tracks[indexPath.row]
-
+            
             vc?.artistPassed = track.artists[indexPath.section].name
             vc?.songPassed = track.title
         }

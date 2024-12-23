@@ -23,7 +23,7 @@ struct Playlist: Decodable {
     struct Track: Decodable {
         let title: String
         let artists: [Artists]
-        let coverUri: String
+        let coverUri: String?
     }
 
     struct Artists: Codable {

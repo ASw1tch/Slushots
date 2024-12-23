@@ -10,7 +10,8 @@ import UIKit
 import SwiftUI
 
 class YandexLoginViewController: UIViewController {
- 
+    private var activityIndicator: UIActivityIndicatorView?
+    
     @IBOutlet weak var loginTextField: UITextField!
     
     @IBAction func watchButton(_ sender: UIButton) {
@@ -18,9 +19,11 @@ class YandexLoginViewController: UIViewController {
             loginTextField.placeholder = "Textfield must be filled"
             return
         }
+        activityIndicator?.startAnimating()
         
         makeYandexRequest(ownerName: ownerName) { [weak self] result in
             DispatchQueue.main.async {
+                self?.activityIndicator?.stopAnimating()
                 switch result {
                 case .success(let yaResult):
                     let mediaListVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MediaListViewController") as? MediaListViewController
@@ -28,18 +31,34 @@ class YandexLoginViewController: UIViewController {
                     mediaListVC?.yandexOwnerName = ownerName
                     mediaListVC?.yaResult = yaResult
                     self?.navigationController?.pushViewController(mediaListVC!, animated: true)
-                case .failure:
+                case .failure(let error):
+                    print(error)
                     self?.showNoResultsScreen(message: "No results found for this username. Try another or check spelling.")
                 }
             }
         }
     }
+    private func setupActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator?.color = .gray
+        activityIndicator?.hidesWhenStopped = true
+        if let activityIndicator = activityIndicator {
+            view.addSubview(activityIndicator)
+            activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            ])
+        }
+    }
+    
     
     var yandexApiCaller = YandexApiCaller()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDismissKeyboardGesture()
+        setupActivityIndicator()
     }
     
     private func makeYandexRequest(ownerName: String, completion: @escaping (Result<YandexSongResponse, Error>) -> Void) {
