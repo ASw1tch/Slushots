@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -40,6 +40,9 @@
 		C65285EB4107AC8451CC5D65 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350B05678AF3594914ECE41 /* CacheManager.swift */; };
 		D11137DE5A60A3C03AC13F9B /* PlaylistCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B8FF8276BE52FD6B4DC3B5 /* PlaylistCellView.swift */; };
 		E371FC83BA7DD2761FB55B57 /* EmojiFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C0F308C4F69EC615D1DDF0 /* EmojiFile.swift */; };
+		EA75E63C2D1ECB4E003AAF13 /* static-glitch2.gif in Resources */ = {isa = PBXBuildFile; fileRef = EA75E63B2D1ECB4E003AAF13 /* static-glitch2.gif */; };
+		EAEDC11C2D1B5E86002CA6B9 /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEDC11B2D1B5E86002CA6B9 /* PlayerController.swift */; };
+		EAEDC11E2D1B6B31002CA6B9 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEDC11D2D1B6B31002CA6B9 /* PlayerViewModel.swift */; };
 		F49FA1CAC7383CC33DC89161 /* NoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F837EA87689C4830532EC5 /* NoResultsView.swift */; };
 		F7FA2B450B28E58B6F7A840D /* MediaListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4493FAD108BF9F4313D170E8 /* MediaListViewController.swift */; };
 		F9E63BA9A3975E0D1F3F514D /* YT_ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1829665355D6E65537F170 /* YT_ID.swift */; };
@@ -48,7 +51,7 @@
 /* Begin PBXFileReference section */
 		03404CC9BBD371EA840CDF02 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		09F837EA87689C4830532EC5 /* NoResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultsView.swift; sourceTree = "<group>"; };
-		11D73A470E1C28BDFC8F3C30 /* slushots.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = slushots.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11D73A470E1C28BDFC8F3C30 /* slushots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = slushots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D3100E6C8333614D0D7041 /* YandexApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexApiCaller.swift; sourceTree = "<group>"; };
 		1B227C3A8EED20DBC03AEEA2 /* SPTFApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTFApiCaller.swift; sourceTree = "<group>"; };
 		23093200BF83DEAD7322EF66 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -81,6 +84,9 @@
 		DB0D490A52FB877F68D603F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DC1829665355D6E65537F170 /* YT_ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YT_ID.swift; sourceTree = "<group>"; };
 		E51874F0C7F8E5641D28288B /* YTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTResponse.swift; sourceTree = "<group>"; };
+		EA75E63B2D1ECB4E003AAF13 /* static-glitch2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "static-glitch2.gif"; sourceTree = "<group>"; };
+		EAEDC11B2D1B5E86002CA6B9 /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerController.swift; path = Slushots/ViewControllers/PlayerController.swift; sourceTree = SOURCE_ROOT; };
+		EAEDC11D2D1B6B31002CA6B9 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 		EB5111857DE47BD8A58AE020 /* SPTFResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTFResponse.swift; sourceTree = "<group>"; };
 		ED13FEB94EB7283CC56C5872 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6D50BC0CE04824697869FF7 /* SignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOut.swift; sourceTree = "<group>"; };
@@ -90,6 +96,7 @@
 		07B603D5EE2660F243924A62 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				EAEDC11D2D1B6B31002CA6B9 /* PlayerViewModel.swift */,
 				03404CC9BBD371EA840CDF02 /* AuthViewController.swift */,
 				24C0F308C4F69EC615D1DDF0 /* EmojiFile.swift */,
 				4493FAD108BF9F4313D170E8 /* MediaListViewController.swift */,
@@ -99,6 +106,7 @@
 				2AA40420DB52307274430B6A /* PlaylistTableViewCell.swift */,
 				9C6D64272932C96509EDB88F /* WelcomeViewController.swift */,
 				B8D52DD61A960DAA5D2D21F9 /* YandexLoginViewController.swift */,
+				EAEDC11B2D1B5E86002CA6B9 /* PlayerController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -111,6 +119,7 @@
 				8AFFF3220344BA573E804718 /* iphone-1836071.jpg */,
 				9BED84559EAD5202DCF0ECC8 /* spotifyLogo.png */,
 				5243E5748A6A30FA35516D2F /* yandexLogo.png */,
+				EA75E63B2D1ECB4E003AAF13 /* static-glitch2.gif */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -254,11 +263,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
-				TargetAttributes = {
-					48B44CA3BA97BE1D3235B7EF = {
-						DevelopmentTeam = PFP266U7G7;
-					};
-				};
 			};
 			buildConfigurationList = C71948CC04E88433A5E112BC /* Build configuration list for PBXProject "slushots" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -286,6 +290,7 @@
 				12944C7EA24B05828DD78B65 /* LaunchScreen.storyboard in Resources */,
 				BB36EAAAD12805F1B6C026E6 /* Main.storyboard in Resources */,
 				8E89A6123FC6B727C7E62B7F /* crowd-1056764.jpg in Resources */,
+				EA75E63C2D1ECB4E003AAF13 /* static-glitch2.gif in Resources */,
 				0AE41293479060459C239495 /* iphone-1836071.jpg in Resources */,
 				2AD256E6E1EAF7F1431C2EA6 /* spotifyLogo.png in Resources */,
 				5AAFFCC491DA8DDBD88135F6 /* yandexLogo.png in Resources */,
@@ -307,6 +312,8 @@
 				2C0AC56CCC4B247377E83001 /* Constants.swift in Sources */,
 				E371FC83BA7DD2761FB55B57 /* EmojiFile.swift in Sources */,
 				AC582A6C7F2AC9C6BC781058 /* Image.swift in Sources */,
+				EAEDC11E2D1B6B31002CA6B9 /* PlayerViewModel.swift in Sources */,
+				EAEDC11C2D1B5E86002CA6B9 /* PlayerController.swift in Sources */,
 				F7FA2B450B28E58B6F7A840D /* MediaListViewController.swift in Sources */,
 				F49FA1CAC7383CC33DC89161 /* NoResultsView.swift in Sources */,
 				58E0A8EEC50FE4DBC2E6EC94 /* PlayerViewController.swift in Sources */,
@@ -358,6 +365,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = RWP28CYWVZ;
 				INFOPLIST_FILE = slushots/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -442,6 +450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = RWP28CYWVZ;
 				INFOPLIST_FILE = slushots/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -203,8 +203,6 @@ final class MediaListViewController: UIViewController{
         }))
         present(alert, animated: true)
     }
-    
-    
 }
 
 extension MediaListViewController: UITableViewDataSource {
@@ -240,7 +238,6 @@ extension MediaListViewController: UITableViewDataSource {
                 let song = track.title
                 let artist = track.artists.first?.name ?? "Unknown Artist"
                 
-                // Формируем URL для обложки, если включены обложки
                 let coverPrepared = String("https://" + (track.coverUri ?? "").dropLast(2) + "400x400")
                 let imageUrl: URL? = showCovers ? URL(string: coverPrepared) : nil
                 let isImageUrlInvalid = (imageUrl == nil || imageUrl?.absoluteString.isEmpty == true)
@@ -296,25 +293,27 @@ extension MediaListViewController: UITableViewDataSource {
 
 extension MediaListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if result != nil {
-        } else if let yaResult = yaResult {
-            _ = yaResult.playlist.tracks[indexPath.row]
-        }
+        tableView.deselectRow(at: indexPath, animated: true)
         
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "PlayerViewController") as? PlayerViewController
+        var artist: String = ""
+        var song: String = ""
         
         if !allItems.isEmpty {
             let item = allItems[indexPath.row]
-            vc?.artistPassed = item.track.name
-            vc?.songPassed = item.track.artists.first?.name ?? ""
+            song = item.track.name
+            artist = item.track.artists.first?.name ?? "Unknown Artist"
         } else if let yaResult = yaResult {
             let track = yaResult.playlist.tracks[indexPath.row]
-            
-            vc?.artistPassed = track.artists[indexPath.section].name
-            vc?.songPassed = track.title
+            song = track.title
+            artist = track.artists.first?.name ?? "Unknown Artist"
         }
-        vc?.prepareVideo()
-        navigationController?.pushViewController(vc!, animated: true)
+        
+        // Создаем PlayerView и оборачиваем его в UIHostingController\
+        let playerView = PlayerView(songPassed: song, artistPassed: artist)
+        let hostingController = UIHostingController(rootView: playerView)
+        
+        // Переход на SwiftUI-вью
+        navigationController?.pushViewController(hostingController, animated: true)
     }
 }
 

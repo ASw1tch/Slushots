@@ -35,11 +35,20 @@ final class YTApiCaller {
         case quotaExceeded
     }
     
-    public func getVideoFromCell(songTitle: String, completion: @escaping (Result<YTResponse, APIError>) -> Void) {
-        guard let urlString = URL(string: Constants.apiURL + songTitle) else {
-            print("Invalid urlString")
+    public func getVideoFromCell(songTitle: String, attempts: Int = 0, completion: @escaping (Result<YTResponse, APIError>) -> Void) {
+        print("Attempts: \(attempts)")
+        guard attempts < 11 else {
+            print("Maximum retry attempts reached. Stopping API calls.")
+            completion(.failure(.quotaExceeded))
             return
         }
+        
+        guard let urlString = URL(string: Constants.apiURL + songTitle) else {
+            print("Invalid urlString")
+            completion(.failure(.failedToGetData))
+            return
+        }
+        
         print("Request URL: \(urlString)")
         
         let session = URLSession.shared
@@ -73,17 +82,11 @@ final class YTApiCaller {
                     completion(.failure(.failedToGetData))
                 }
                 
-            case 400:
-                print("Error 400: Bad Request")
+            case 400, 403:
+                print("Error \(httpResponse.statusCode): Bad Request or Forbidden")
                 Constants.apiKey = YTApiCaller.getNextApiKey()
                 print("Switching API key. New key: \(Constants.apiKey)")
-                self.getVideoFromCell(songTitle: songTitle, completion: completion)
-                
-            case 403:
-                print("Error 403: Forbidden (invalid API key or quota exceeded)")
-                Constants.apiKey = YTApiCaller.getNextApiKey()
-                print("Switching API key. New key: \(Constants.apiKey)")
-                self.getVideoFromCell(songTitle: songTitle, completion: completion)
+                self.getVideoFromCell(songTitle: songTitle, attempts: attempts + 1, completion: completion)
                 
             default:
                 print("Unhandled HTTP status code: \(httpResponse.statusCode)")
