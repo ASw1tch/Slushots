@@ -110,7 +110,7 @@ final class SPTFAuthManager {
     private var onRefreshBlocks = [(String) -> Void]()
     
     ///Supplies valid token to be used with API Calls
-    
+    ///
     func withValidToken(comletion: @escaping (String) -> Void) {
         guard !refreshingToken else {
             onRefreshBlocks.append(comletion)
@@ -190,7 +190,6 @@ final class SPTFAuthManager {
                 self?.onRefreshBlocks.forEach { $0(result.access_token)}
                 self?.onRefreshBlocks.removeAll()
                 self?.cacheToken(result: result)
-                //print(self?.accessToken)
                 completion?(true)
             }
             catch {

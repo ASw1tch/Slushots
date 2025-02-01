@@ -26,11 +26,8 @@ class YandexLoginViewController: UIViewController {
                 self?.activityIndicator?.stopAnimating()
                 switch result {
                 case .success(let yaResult):
-                    let mediaListVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MediaListViewController") as? MediaListViewController
-                    mediaListVC?.didEnterOwnerName(ownerName)
-                    mediaListVC?.yandexOwnerName = ownerName
-                    mediaListVC?.yaResult = yaResult
-                    self?.navigationController?.pushViewController(mediaListVC!, animated: true)
+                    UserDefaultsManager.shared.saveYandexUser(ownerName)
+                    self?.showMediaListView(ownerName: ownerName, yaResult: yaResult)
                 case .failure(let error):
                     print(error)
                     self?.showNoResultsScreen(message: "No results found for this username. Try another or check spelling.")
@@ -82,6 +79,13 @@ class YandexLoginViewController: UIViewController {
         )
         
         let hostingController = UIHostingController(rootView: errorView)
+        hostingController.modalPresentationStyle = .fullScreen
+        present(hostingController, animated: true)
+    }
+    
+    func showMediaListView(ownerName: String, yaResult: YandexSongResponse) {
+        let mediaListView = MediaListView(ownerName: ownerName, yaResult: yaResult)
+        let hostingController = UIHostingController(rootView: mediaListView)
         hostingController.modalPresentationStyle = .fullScreen
         present(hostingController, animated: true)
     }
