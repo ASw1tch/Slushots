@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,17 +28,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else {
             if let yandexUser = UserDefaultsManager.shared.getYandexUser() {
-                print("Yandex User: \(yandexUser)") // Проверяем, что пользователь есть
+                print("Yandex User: \(yandexUser)")
                 
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                guard let mediaListVC = storyboard.instantiateViewController(identifier: "MediaListViewController") as? MediaListViewController else {
-                    print("Error: Could not instantiate MediaListViewController")
-                    return false
-                }
-                print("MediaListViewController successfully instantiated")
-                mediaListVC.yandexOwnerName = "\(yandexUser)"
-                
-                let navigationController = UINavigationController(rootViewController: mediaListVC)
+                let mediaListView = MediaListView(ownerName: yandexUser, yaResult: YandexSongResponse(playlist: Playlist(
+                    owner: Owner(name: "", avatarHash: ""),
+                        tracks: []
+                    )
+                ))
+ 
+                let hostingController = UIHostingController(rootView: mediaListView) // New transition to SUI
+                let navigationController = UINavigationController(rootViewController: hostingController)
                 window.rootViewController = navigationController
             } else {
                 print("No Yandex User and no Spotify session found")

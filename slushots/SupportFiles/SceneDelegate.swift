@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -27,13 +28,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
         }
         else if let yandexUser = UserDefaultsManager.shared.getYandexUser() {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let mediaListVC = storyboard.instantiateViewController(identifier: "MediaListViewController") as? MediaListViewController else {
-                print("Error: Could not instantiate MediaListViewController")
-                return
-            }
-            mediaListVC.yandexOwnerName = "\(yandexUser)"
-            let navigationController = UINavigationController(rootViewController: mediaListVC)
+            let mediaListView = MediaListView(ownerName: yandexUser, yaResult: YandexSongResponse(playlist: Playlist(
+                owner: Owner(name: "", avatarHash: ""),
+                tracks: []
+            )
+            ))
+            
+            let hostingController = UIHostingController(rootView: mediaListView) // New transition to SUI
+            let navigationController = UINavigationController(rootViewController: hostingController)
             window.rootViewController = navigationController
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
