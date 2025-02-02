@@ -23,7 +23,7 @@ struct MediaListView: View {
     }
     
     var body: some View {
-        NavigationView {
+        
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     
@@ -129,4 +129,4 @@ struct MediaListView: View {
             }
         }
     }
-}
+

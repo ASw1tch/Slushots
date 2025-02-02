@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class WelcomeViewController: UIViewController {
     
@@ -13,6 +14,9 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func yandexButtonPressed(_ sender: UIButton) {
+        let yandexLoginView = YandexLoginView() 
+        let hostingController = UIHostingController(rootView: yandexLoginView)
+        navigationController?.pushViewController(hostingController, animated: true)
     }
     
     let backgroundImageView = UIImageView()

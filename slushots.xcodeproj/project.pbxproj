@@ -46,6 +46,9 @@
 		EA822EB12D4D6A5C0071EDE8 /* MediaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA822EB02D4D6A4D0071EDE8 /* MediaListView.swift */; };
 		EA822EB32D4D6A810071EDE8 /* MediaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA822EB22D4D6A810071EDE8 /* MediaListViewModel.swift */; };
 		EA822EB52D4E31CA0071EDE8 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA822EB42D4E31CA0071EDE8 /* ImageLoader.swift */; };
+		EAB5D9F62D4EBD20008BF158 /* YandexLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5D9F52D4EBD20008BF158 /* YandexLoginView.swift */; };
+		EAB5D9FB2D4EBD7F008BF158 /* YandexLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5D9FA2D4EBD7F008BF158 /* YandexLoginViewModel.swift */; };
+		EAB5D9FD2D4EC036008BF158 /* ParallaxMotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB5D9FC2D4EC036008BF158 /* ParallaxMotionManager.swift */; };
 		F49FA1CAC7383CC33DC89161 /* NoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F837EA87689C4830532EC5 /* NoResultsView.swift */; };
 		F7FA2B450B28E58B6F7A840D /* MediaListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4493FAD108BF9F4313D170E8 /* MediaListViewController.swift */; };
 		F9E63BA9A3975E0D1F3F514D /* YT_ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1829665355D6E65537F170 /* YT_ID.swift */; };
@@ -92,6 +95,9 @@
 		EA822EB02D4D6A4D0071EDE8 /* MediaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListView.swift; sourceTree = "<group>"; };
 		EA822EB22D4D6A810071EDE8 /* MediaListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListViewModel.swift; sourceTree = "<group>"; };
 		EA822EB42D4E31CA0071EDE8 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		EAB5D9F52D4EBD20008BF158 /* YandexLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginView.swift; sourceTree = "<group>"; };
+		EAB5D9FA2D4EBD7F008BF158 /* YandexLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginViewModel.swift; sourceTree = "<group>"; };
+		EAB5D9FC2D4EC036008BF158 /* ParallaxMotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxMotionManager.swift; sourceTree = "<group>"; };
 		EB5111857DE47BD8A58AE020 /* SPTFResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTFResponse.swift; sourceTree = "<group>"; };
 		ED13FEB94EB7283CC56C5872 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6D50BC0CE04824697869FF7 /* SignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOut.swift; sourceTree = "<group>"; };
@@ -115,6 +121,8 @@
 				2AA40420DB52307274430B6A /* PlaylistTableViewCell.swift */,
 				9C6D64272932C96509EDB88F /* WelcomeViewController.swift */,
 				B8D52DD61A960DAA5D2D21F9 /* YandexLoginViewController.swift */,
+				EAB5D9FA2D4EBD7F008BF158 /* YandexLoginViewModel.swift */,
+				EAB5D9F52D4EBD20008BF158 /* YandexLoginView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -157,6 +165,7 @@
 		71355FFA4565F026AEE43FED /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				EAB5D9FC2D4EC036008BF158 /* ParallaxMotionManager.swift */,
 				6350B05678AF3594914ECE41 /* CacheManager.swift */,
 				EA822EB42D4E31CA0071EDE8 /* ImageLoader.swift */,
 				7386A7B5D134900387E30F19 /* ColorExtention.swift */,
@@ -317,6 +326,7 @@
 				BD1F4F5019B66816CACC29D9 /* Artist.swift in Sources */,
 				9B43B09F91ACE1449999DC08 /* AuthViewController.swift in Sources */,
 				C65285EB4107AC8451CC5D65 /* CacheManager.swift in Sources */,
+				EAB5D9F62D4EBD20008BF158 /* YandexLoginView.swift in Sources */,
 				890746BA2502770D551EB49F /* ColorExtention.swift in Sources */,
 				EA822EB12D4D6A5C0071EDE8 /* MediaListView.swift in Sources */,
 				2C0AC56CCC4B247377E83001 /* Constants.swift in Sources */,
@@ -332,6 +342,7 @@
 				B4088B90581437F2658A4B73 /* SPTFApiCaller.swift in Sources */,
 				20E43C80CAC0E31F92D0995E /* SPTFAuthManager.swift in Sources */,
 				7B49F50E708C1056ECAD850B /* SPTFResponse.swift in Sources */,
+				EAB5D9FD2D4EC036008BF158 /* ParallaxMotionManager.swift in Sources */,
 				EA822EB32D4D6A810071EDE8 /* MediaListViewModel.swift in Sources */,
 				360ECAB13584EA2A3BAA739F /* STPFAuthResponse.swift in Sources */,
 				94CFB79CDD8F1D6A60A09755 /* SceneDelegate.swift in Sources */,
@@ -347,6 +358,7 @@
 				8F01E5FE1A6CF3193AE96DA1 /* YandexApiCaller.swift in Sources */,
 				2623B1BDEA01294372BC0AD8 /* YandexLoginViewController.swift in Sources */,
 				69476249716B47327066ED70 /* YandexResponse.swift in Sources */,
+				EAB5D9FB2D4EBD7F008BF158 /* YandexLoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
