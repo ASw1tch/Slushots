@@ -17,14 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if SPTFAuthManager.shared.isSignedIn {
             SPTFAuthManager.shared.refreshIfNeeded(completion: nil)
             
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let navigationController = storyboard.instantiateInitialViewController() as? UINavigationController else {
-                print ("Error: Could not set navigation contoller(AppDelegate)")
-                return false
-            }
-            let rootViewController = storyboard.instantiateViewController(withIdentifier: "MediaListViewController") as UIViewController
-            navigationController.viewControllers = [rootViewController]
-            window.rootViewController = navigationController
+            let mediaListView = MediaListView(ownerName: "SpotifyUser", spotifyResult: nil)
+            let hostingController = UIHostingController(rootView: mediaListView)
+            
+            let window = UIWindow(frame: UIScreen.main.bounds)
+            window.rootViewController = hostingController
         }
         else {
             if let yandexUser = UserDefaultsManager.shared.getYandexUser() {

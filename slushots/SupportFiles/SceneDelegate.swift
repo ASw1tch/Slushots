@@ -17,15 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         if SPTFAuthManager.shared.isSignedIn {
             SPTFAuthManager.shared.refreshIfNeeded(completion: nil)
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let navigationController = storyboard.instantiateInitialViewController() as? UINavigationController else {
-                print("Error: Could not set navigationController(SceneDelegate)")
-                return
-            }
-            let rootViewController = storyboard.instantiateViewController(withIdentifier: "MediaListViewController") as UIViewController
-            navigationController.viewControllers = [rootViewController]
-            window.rootViewController = navigationController
-            
+            let mediaListView = MediaListView(ownerName: "SpotifyUser", spotifyResult: nil)
+            let hostingController = UIHostingController(rootView: NavigationView { mediaListView })
+            window.rootViewController = hostingController
         }
         else if let yandexUser = UserDefaultsManager.shared.getYandexUser() {
             let mediaListView = MediaListView(ownerName: yandexUser, yaResult: YandexSongResponse(playlist: Playlist(

@@ -22,6 +22,10 @@ struct MediaListView: View {
         _viewModel = StateObject(wrappedValue: MediaListViewModel(ownerName: ownerName, yaResult: yaResult))
     }
     
+    init(ownerName: String, spotifyResult: SpotifySongResponse? = nil) {
+        _viewModel = StateObject(wrappedValue: MediaListViewModel(ownerName: ownerName, spotifyResult: spotifyResult))
+    }
+    
     var body: some View {
         
             ScrollView {

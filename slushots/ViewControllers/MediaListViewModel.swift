@@ -7,13 +7,16 @@
 import SwiftUI
 import Combine
 
+
+
 final class MediaListViewModel: ObservableObject {
     
     // MARK: - Published Properties
     
     @Published var allSpotifyItems: [Item] = []
     @Published var yaResult: YandexSongResponse?
-    
+    @Published var spotifyResult: SpotifySongResponse?
+
     @Published var totalLoadedTracks = 0
     @Published var isLoading = false
     @Published var showCovers = false
@@ -25,32 +28,35 @@ final class MediaListViewModel: ObservableObject {
     
     private var apiCaller = SPTFApiCaller()
     private var yandexApiCaller = YandexApiCaller()
-    
-    // Если нужен ownerName, можно хранить его здесь
+    private let service: StreamingService
     private var yandexOwnerName: String = ""
     
     // MARK: - Init
     init(ownerName: String, yaResult: YandexSongResponse) {
         self.ownerName = ownerName
+        self.service = .yandex
         self.yaResult = yaResult
         loadMediaData()
     }
     
+    // Для Spotify
+    init(ownerName: String, spotifyResult: SpotifySongResponse?) {
+        self.ownerName = ownerName
+        self.service = .spotify
+        self.spotifyResult = spotifyResult
+        loadMediaData()
+    }
+        
+    
     // MARK: - Data Loading
     
-    /// Определяем, какой источник использовать: Yandex или Spotify
     func loadMediaData() {
-        if let owner = UserDefaultsManager.shared.getYandexUser() {
-            yandexOwnerName = owner
-            fetchYandexSongs(ownerName: owner)
-        } else {
-            // Проверка Spotify
-            if SPTFAuthManager.shared.isSignedIn {
-                // Загрузка Spotify треков
-                fetchSpotifySongs(offset: 0)
-            } else {
-                print("No Yandex User and no Spotify session found")
-            }
+        switch service {
+        case .yandex:
+            let ownerName = UserDefaultsManager.shared.getYandexUser() ?? ""
+            fetchYandexSongs(ownerName: ownerName)
+        case .spotify:
+            fetchSpotifySongs(offset: 0)
         }
     }
     

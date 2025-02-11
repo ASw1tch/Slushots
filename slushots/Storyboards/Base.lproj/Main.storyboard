@@ -52,7 +52,6 @@
                                         <connections>
                                             <action selector="spotifyButtonPressed:" destination="kxp-Fn-SsL" eventType="touchUpInside" id="oVu-lA-PYv"/>
                                             <action selector="yandexButtonPressed:" destination="kxp-Fn-SsL" eventType="touchUpInside" id="hC9-7I-UW6"/>
-                                            <segue destination="nff-eG-NJ4" kind="show" identifier="yandexAuth" id="kZB-SP-eR5"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -96,66 +95,6 @@
             </objects>
             <point key="canvasLocation" x="1713.0434782608697" y="83.705357142857139"/>
         </scene>
-        <!--Yandex Login View Controller-->
-        <scene sceneID="qyz-nV-dgu">
-            <objects>
-                <viewController id="nff-eG-NJ4" customClass="YandexLoginViewController" customModule="slushots" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EpU-wl-zPM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crowd-1056764.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TBx-gh-bFY">
-                                <rect key="frame" x="0.0" y="0.0" width="494" height="957"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Yandex mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yes-R5-EkK">
-                                <rect key="frame" x="47" y="373" width="216" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="@yandex.ru" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ndn-eF-s4q">
-                                <rect key="frame" x="271" y="373" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8IU-B2-krI">
-                                <rect key="frame" x="136" y="441" width="143" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemPinkColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Watch">
-                                    <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="20"/>
-                                    <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="watchButton:" destination="nff-eG-NJ4" eventType="touchUpInside" id="fFN-YC-K1f"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="To access your favorite playlist, simply enter your email on which you use Yandex Plus." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2b-i9-Aot">
-                                <rect key="frame" x="36" y="92" width="342" height="222"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="30"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Zr4-pd-Nu0"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="0QA-Xu-fWE"/>
-                    <connections>
-                        <outlet property="loginTextField" destination="Yes-R5-EkK" id="OMW-If-aDK"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ho3-2Y-SMv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2521.739130434783" y="83.705357142857139"/>
-        </scene>
         <!--Auth View Controller-->
         <scene sceneID="IRh-Pr-ORq">
             <objects>
@@ -170,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbl-BL-OCq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2522" y="-783"/>
+            <point key="canvasLocation" x="2541" y="84"/>
         </scene>
         <!--Media List View Controller-->
         <scene sceneID="qI8-CM-UCM">
@@ -248,54 +187,6 @@
             </objects>
             <point key="canvasLocation" x="3331.884057971015" y="83.705357142857139"/>
         </scene>
-        <!--Player View Controller-->
-        <scene sceneID="6vi-nv-vyS">
-            <objects>
-                <viewController storyboardIdentifier="PlayerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gxC-J9-ET9" customClass="PlayerViewController" customModule="slushots" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Lrc-5q-Xqz">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wrZ-uw-RFI">
-                                <rect key="frame" x="10" y="48" width="394" height="813"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUH-r6-ko7">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <wkWebView verifyAmbiguity="ignoreSizes" contentMode="scaleToFill" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONC-sp-8lX">
-                                        <rect key="frame" x="0.0" y="20.5" width="394" height="792.5"/>
-                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
-                                            <dataDetectorTypes key="dataDetectorTypes" none="YES"/>
-                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" video="YES"/>
-                                            <wkPreferences key="preferences"/>
-                                        </wkWebViewConfiguration>
-                                    </wkWebView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="M4o-3N-f12"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="M4o-3N-f12" firstAttribute="bottom" secondItem="wrZ-uw-RFI" secondAttribute="bottom" constant="1" id="cLy-pa-A3M"/>
-                            <constraint firstItem="wrZ-uw-RFI" firstAttribute="top" secondItem="M4o-3N-f12" secondAttribute="top" id="qFr-Ti-ysJ"/>
-                            <constraint firstItem="wrZ-uw-RFI" firstAttribute="leading" secondItem="M4o-3N-f12" secondAttribute="leading" constant="10" id="yew-Un-maE"/>
-                            <constraint firstItem="M4o-3N-f12" firstAttribute="trailing" secondItem="wrZ-uw-RFI" secondAttribute="trailing" constant="10" id="zPW-gR-qXo"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="euC-6m-gFR"/>
-                    <connections>
-                        <outlet property="artistLabel" destination="CUH-r6-ko7" id="olJ-Lj-7p9"/>
-                        <outlet property="webView" destination="ONC-sp-8lX" id="MIO-NU-rU7"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DMF-j2-ss3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4107.2463768115949" y="83.705357142857139"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="euH-26-ppF">
             <objects>
@@ -319,7 +210,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="crowd-1056764.jpg" width="967.67999267578125" height="725.760009765625"/>
         <image name="iphone-1836071.jpg" width="1362" height="907.91998291015625"/>
         <namedColor name="AccentColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -329,9 +219,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
