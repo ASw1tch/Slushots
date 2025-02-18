@@ -12,10 +12,8 @@ struct PlaylistCellView: View {
     let artist: String
     let imageUrl: URL?
     
-    // Разовый случайный эмодзи
     private let fallbackEmoji: String
     
-    // Состояния для единоразовой загрузки и таймаута
     @State private var triedCoverLoad = false
     @State private var isImageLoaded = false
     @State private var timedOut = false

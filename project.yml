@@ -4,8 +4,8 @@ BUNDLE_ID_PREFIX: &BUNDLE_ID_PREFIX aswitch.me
 
 settings:
   base:
-    CURRENT_PROJECT_VERSION: 10
-    MARKETING_VERSION: "1.2"
+    CURRENT_PROJECT_VERSION: 1
+    MARKETING_VERSION: "2.0.0"
     DEVELOPMENT_TEAM: *DEVELOPMENT_TEAM
     IDEPreferLogStreaming: YES
 
@@ -15,7 +15,7 @@ options:
   bundleIdPrefix: *BUNDLE_ID_PREFIX
   developmentLanguage: en
   deploymentTarget:
-    iOS: 15.0
+    iOS: 16.0
 
 targets:
   *APP_NAME:
@@ -31,13 +31,6 @@ targets:
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         UILaunchStoryboardName: LaunchScreen
-        UIApplicationSceneManifest:
-          UIApplicationSupportsMultipleScenes: false
-          UISceneConfigurations:
-            UIWindowSceneSessionRoleApplication:
-              - UISceneConfigurationName: Default Configuration
-                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
-                UISceneStoryboardFile: Main
     settings:
       base:
         TARGETED_DEVICE_FAMILY: 1

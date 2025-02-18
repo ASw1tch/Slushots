@@ -7,11 +7,7 @@
 import SwiftUI
 import Combine
 
-
-
 final class MediaListViewModel: ObservableObject {
-    
-    // MARK: - Published Properties
     
     @Published var allSpotifyItems: [Item] = []
     @Published var yaResult: YandexSongResponse?
@@ -23,15 +19,13 @@ final class MediaListViewModel: ObservableObject {
     @Published var ownerName: String?
     
     @Published var errorMessage: String?
-    
-    // MARK: - Dependencies
+
     
     private var apiCaller = SPTFApiCaller()
     private var yandexApiCaller = YandexApiCaller()
     private let service: StreamingService
     private var yandexOwnerName: String = ""
     
-    // MARK: - Init
     init(ownerName: String, yaResult: YandexSongResponse) {
         self.ownerName = ownerName
         self.service = .yandex
@@ -39,7 +33,6 @@ final class MediaListViewModel: ObservableObject {
         loadMediaData()
     }
     
-    // Для Spotify
     init(ownerName: String, spotifyResult: SpotifySongResponse?) {
         self.ownerName = ownerName
         self.service = .spotify
@@ -47,9 +40,6 @@ final class MediaListViewModel: ObservableObject {
         loadMediaData()
     }
         
-    
-    // MARK: - Data Loading
-    
     func loadMediaData() {
         switch service {
         case .yandex:
@@ -83,7 +73,14 @@ final class MediaListViewModel: ObservableObject {
         }
     }
     
-    /// Загружаем треки из Яндекс
+    func loadMoreIfNeeded() {
+        if isLoading || yaResult != nil {
+            return
+        }
+        fetchSpotifySongs(offset: totalLoadedTracks)
+    }
+    
+    
     func fetchYandexSongs(ownerName: String) {
         yandexApiCaller.getYandexPlayList(ownerName: ownerName) { [weak self] result in
             DispatchQueue.main.async {
@@ -97,15 +94,10 @@ final class MediaListViewModel: ObservableObject {
         }
     }
     
-    // MARK: - Secret Feature
-    
-    /// Проверка пароля
     func isValidPassword(_ password: String) -> Bool {
         return password == K.password 
     }
     
-    /// Переключение режима showCovers (секретная функция)
-    /// Возвращает true, если пароль подошёл; false, если нет
     func activateSecretFeature(password: String) -> Bool {
         if isValidPassword(password) {
             showCovers.toggle()
@@ -115,19 +107,7 @@ final class MediaListViewModel: ObservableObject {
         }
     }
     
-    // MARK: - Подгрузка следующих треков
-    
-    /// Вызывается, когда пользователь приблизился к концу списка
-    func loadMoreIfNeeded() {
-        // Если уже загружается или источник - Яндекс (где, возможно, нет пагинации), просто выходим
-        if isLoading || yaResult != nil {
-            return
-        }
-        // Иначе - подгружаем следующий "offset"
-        fetchSpotifySongs(offset: totalLoadedTracks)
-    }
-    
-    // MARK: - Выход из аккаунта
+  
     
     func signOut(completion: @escaping (Bool) -> Void) {
         SPTFAuthManager.shared.signOut { signedOut in
@@ -140,9 +120,6 @@ final class MediaListViewModel: ObservableObject {
         }
     }
     
-    // MARK: - Унифицированный доступ к трекам
-    
-    /// Общее количество треков для TableView / List
     var numberOfTracks: Int {
         if !allSpotifyItems.isEmpty {
             return allSpotifyItems.count
@@ -151,8 +128,7 @@ final class MediaListViewModel: ObservableObject {
         }
         return 0
     }
-    
-    /// Получить название/исполнителя конкретного трека в зависимости от источника
+
     func trackInfo(at index: Int) -> (song: String, artist: String, coverURL: URL?) {
         if !allSpotifyItems.isEmpty {
             let item = allSpotifyItems[index]
@@ -166,7 +142,6 @@ final class MediaListViewModel: ObservableObject {
             let song = track.title
             let artist = track.artists.first?.name ?? "Unknown Artist"
             
-            // Преобразуем URI обложки Яндекс в рабочий URL
             let coverPrepared = "https://" + (track.coverUri ?? "").dropLast(2) + "400x400"
             let coverString = showCovers ? coverPrepared : ""
             let url = coverString.isEmpty ? nil : URL(string: coverString)

@@ -40,7 +40,7 @@ class YandexLoginViewModel: ObservableObject {
     }
     private func formatOwnerName(_ input: String) -> String {
         if let atIndex = input.firstIndex(of: "@") {
-            return String(input[..<atIndex]) // Убираем всё, что идёт после @
+            return String(input[..<atIndex]) 
         }
         return input
     }

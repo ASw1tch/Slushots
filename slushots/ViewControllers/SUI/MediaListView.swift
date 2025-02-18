@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct MediaListView: View {
-    @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var coordinator: AppCoordinator
     @StateObject private var viewModel: MediaListViewModel
+    
     @State private var showSignOutConfirmation = false
     @State private var showSecretFeatureAlert = false
+    @State private var shouldNavigateToWelcome = false
     @State private var secretPassword = "HappyNewCover812"
     
     @State private var showResultAlert = false
@@ -27,10 +29,8 @@ struct MediaListView: View {
     }
     
     var body: some View {
-        
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
-                    
                     ForEach(0..<viewModel.numberOfTracks, id: \.self) { index in
                         let info = viewModel.trackInfo(at: index)
                         
@@ -48,9 +48,6 @@ struct MediaListView: View {
                     }
                 }
             }
-            .refreshable {
-                viewModel.loadMediaData()
-            }
             .onAppear() {
                 viewModel.loadMediaData()
             }
@@ -65,7 +62,6 @@ struct MediaListView: View {
                 
                 ToolbarItem(placement: .principal) {
                     HStack(spacing: 5) {
-                        Text("SUI")
                         Text(viewModel.poweredBy)
                             .font(.headline)
                             .foregroundColor(viewModel.poweredBy == "Powered by Yandex" ? Color(hex: "#ea2e24") : Color(hex: "#65d46e"))
@@ -78,21 +74,30 @@ struct MediaListView: View {
                     }
                 }
             }
+            .navigationDestination(isPresented: $shouldNavigateToWelcome) {
+                WelcomeView()
+            }
             .alert(
                 "Sign Out and Remove All The Data",
                 isPresented: $showSignOutConfirmation
             ) {
                 Button("Cancel", role: .cancel) {}
                 Button("Sign Out", role: .destructive) {
-                    UserDefaultsManager.shared.resetAllValues()
-                    //dismiss()
-                     guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                           let window = scene.windows.first else { return }
-                    
-                     let sb = UIStoryboard(name: "Main", bundle: nil)
-                     let vc = sb.instantiateViewController(withIdentifier: "WelcomeViewController")
-                     window.rootViewController = UINavigationController(rootViewController: vc)
-                     window.makeKeyAndVisible()
+                    if UserDefaultsManager.shared.getYandexUser() != nil {
+                        UserDefaultsManager.shared.resetAllValues()
+                        coordinator.showWelcome()
+                        print("Yandex was logged out")
+                    } else {
+                        viewModel.signOut { success in
+                            if success {
+                                UserDefaultsManager.shared.resetAllValues()
+                                coordinator.currentView = .welcome
+                                print("Spoty was logged out")
+                            } else {
+                                print("Sign out wasn't successful")
+                            }
+                        }
+                    }
                 }
             } message: {
                 Text("This action will sign out from your streaming account and delete all the data associated with this account from your phone. Do you want to proceed?")

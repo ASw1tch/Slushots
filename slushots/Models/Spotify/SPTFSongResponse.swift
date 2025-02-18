@@ -1,5 +1,5 @@
 //
-//  SPTFResponse.swift
+//  SPTFSongResponse.swift
 //  slushots
 //
 //  Created by Anatoliy Switch on 04.09.2022.

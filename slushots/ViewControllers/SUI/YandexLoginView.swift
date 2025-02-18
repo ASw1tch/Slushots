@@ -33,7 +33,7 @@ struct YandexLoginView: View {
                     .foregroundColor(Color.black)
                     .padding(10)
                     .background(RoundedRectangle(cornerRadius: 12).fill(Color.white))
-                    .overlay(gradientOverlay) // Накладываем заранее вынесенный оверлей
+                    .overlay(gradientOverlay)
                     .onAppear {
                         animateGradient.toggle()
                     }
@@ -79,8 +79,6 @@ struct YandexLoginView: View {
             }
         }
     
-    
-    /// Вынесенный @ViewBuilder, чтобы облегчить чтение и типизацию
     @ViewBuilder
     private var gradientOverlay: some View {
         ZStack {
@@ -89,7 +87,6 @@ struct YandexLoginView: View {
         }
     }
     
-    /// Первый градиент с анимацией (strokeBorder)
     private var firstGradient: some View {
         RoundedRectangle(cornerRadius: 12)
             .strokeBorder(
@@ -106,7 +103,7 @@ struct YandexLoginView: View {
                        value: animateGradient)
     }
     
-    /// Второй градиент с анимацией (stroke + blur)
+
     private var secondGradient: some View {
         RoundedRectangle(cornerRadius: 16)
             .stroke(
