@@ -9,104 +9,95 @@
 /* Begin PBXBuildFile section */
 		0262E637914713E05271182C /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E483981F8B66B18B19E84F /* UserDefaultsManager.swift */; };
 		03435605851E9365D74D6F5E /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EC6876D8722A9DE056BB75 /* Track.swift */; };
-		0AE41293479060459C239495 /* iphone-1836071.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AFFF3220344BA573E804718 /* iphone-1836071.jpg */; };
-		12944C7EA24B05828DD78B65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43FB765450FBA88961FACA2C /* LaunchScreen.storyboard */; };
+		0E916596E3634FC4AA73BA41 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C650D48A78D7DE299D6CDD2 /* WelcomeView.swift */; };
+		0F0BA4A11B4D0A266FF66135 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2100ABEE5B4A7328BF2FF753 /* PlayerViewController.swift */; };
 		202C4B954C1337732E174307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E34BF4EB36BB75997B148 /* AppDelegate.swift */; };
 		20E43C80CAC0E31F92D0995E /* SPTFAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59729535AC86800CAB2E1467 /* SPTFAuthManager.swift */; };
-		2623B1BDEA01294372BC0AD8 /* YandexLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D52DD61A960DAA5D2D21F9 /* YandexLoginViewController.swift */; };
-		2AD256E6E1EAF7F1431C2EA6 /* spotifyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BED84559EAD5202DCF0ECC8 /* spotifyLogo.png */; };
 		2C0AC56CCC4B247377E83001 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D625696C90DFE4773FB3BE40 /* Constants.swift */; };
+		2D1ACA6550D597FE53C1EF5F /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5F18FDD59BE14533B6C72C /* SplashScreenView.swift */; };
 		360ECAB13584EA2A3BAA739F /* STPFAuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20EF81816B6C85862263CE8 /* STPFAuthResponse.swift */; };
 		3881505CAEE013D63605F05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED13FEB94EB7283CC56C5872 /* Assets.xcassets */; };
-		482A5FF868C7BC09DFA805F5 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F022983F98E65FF1AE291C /* PlayerViewModel.swift */; };
-		498E596B1D0A58625314B8E1 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D64272932C96509EDB88F /* WelcomeViewController.swift */; };
-		57DD12146C4DDE7B5AE578EF /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F729564B46D3E45852FEF520 /* PlayerController.swift */; };
-		58E0A8EEC50FE4DBC2E6EC94 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722C9B55FE0F880822D4E411 /* PlayerViewController.swift */; };
-		5AAFFCC491DA8DDBD88135F6 /* yandexLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5243E5748A6A30FA35516D2F /* yandexLogo.png */; };
+		3DEC6E510FF4C413262FBA27 /* StreamingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8AF6E990D7619242FEA4F5 /* StreamingService.swift */; };
+		59B619AB6685AC8DBDF2FE49 /* SlushotsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED9C11120D7FAC7DACB4B45 /* SlushotsApp.swift */; };
 		5F415258B477AA285B147966 /* YTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51874F0C7F8E5641D28288B /* YTResponse.swift */; };
+		63CBE5A087E14FE51CFD2179 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98562242B092BF27D0A820CF /* ImageLoader.swift */; };
 		69476249716B47327066ED70 /* YandexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ABDD44C6B3AC31A16A3D95 /* YandexResponse.swift */; };
-		7B49F50E708C1056ECAD850B /* SPTFResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5111857DE47BD8A58AE020 /* SPTFResponse.swift */; };
+		72F123EE169A5109E2E52BAF /* YandexLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE262A9D050AB8FA5B7B6F /* YandexLoginViewModel.swift */; };
+		76013C24EF59F916D8B4D200 /* EmojiFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAFEAAA26FF4B3B59B15224 /* EmojiFile.swift */; };
+		7B49F50E708C1056ECAD850B /* SPTFSongResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5111857DE47BD8A58AE020 /* SPTFSongResponse.swift */; };
+		7F732604891479F8BC01663B /* YandexLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C12BD673028FB54B820A4F9 /* YandexLoginView.swift */; };
+		85E9117BD44682A543FEE667 /* NoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C92F9DCC429F709C0B7EE7F /* NoResultsView.swift */; };
 		890746BA2502770D551EB49F /* ColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7386A7B5D134900387E30F19 /* ColorExtention.swift */; };
 		89F4A708009675A2771B1BB2 /* static-glitch2.gif in Resources */ = {isa = PBXBuildFile; fileRef = D52FD62F56634DB28BB232AF /* static-glitch2.gif */; };
 		8AC50B59BCB2A3000EAE2768 /* YTApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2530209048A77CC3CA35587A /* YTApiCaller.swift */; };
-		8E89A6123FC6B727C7E62B7F /* crowd-1056764.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BD37382D80C5F0C8DCD3155 /* crowd-1056764.jpg */; };
 		8F01E5FE1A6CF3193AE96DA1 /* YandexApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D3100E6C8333614D0D7041 /* YandexApiCaller.swift */; };
-		94CFB79CDD8F1D6A60A09755 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0D490A52FB877F68D603F9 /* SceneDelegate.swift */; };
-		9B43B09F91ACE1449999DC08 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03404CC9BBD371EA840CDF02 /* AuthViewController.swift */; };
-		A76D2F33D8EEE06039ED9E65 /* PlaylistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA40420DB52307274430B6A /* PlaylistTableViewCell.swift */; };
+		A80718AE6D98DFB6E3C72CC5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8643DFC99B756DAD9E5C34B /* AppCoordinator.swift */; };
 		A98504A49502EEFEE9934FA8 /* YTSnippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEBDBBDDF1B3EBD076E932B /* YTSnippet.swift */; };
+		AA84F91F393CD3308D7DED70 /* MediaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313473035A2AE12E61CA53B7 /* MediaListView.swift */; };
 		ABF70F7D60B2AB6807879D53 /* SignOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D50BC0CE04824697869FF7 /* SignOut.swift */; };
 		AC582A6C7F2AC9C6BC781058 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBE768450C15F341090CF52 /* Image.swift */; };
+		B12ECA3368B912C8EA50F19A /* SpotifyAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2292014C6BF6CF4746B0DB /* SpotifyAuthView.swift */; };
+		B2AAC95848830A152A45C333 /* PlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D95D69919CA93831D0E4B /* PlayerController.swift */; };
 		B4088B90581437F2658A4B73 /* SPTFApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B227C3A8EED20DBC03AEEA2 /* SPTFApiCaller.swift */; };
-		BB36EAAAD12805F1B6C026E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5ED6C8A10B51EAC8CEDD1E7C /* Main.storyboard */; };
+		B4DFF2AF9DC2A079EE6DE1E7 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89254F526651788FB241092 /* PlayerViewModel.swift */; };
 		BD1F4F5019B66816CACC29D9 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23093200BF83DEAD7322EF66 /* Artist.swift */; };
 		C65285EB4107AC8451CC5D65 /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350B05678AF3594914ECE41 /* CacheManager.swift */; };
-		D11137DE5A60A3C03AC13F9B /* PlaylistCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B8FF8276BE52FD6B4DC3B5 /* PlaylistCellView.swift */; };
-		E371FC83BA7DD2761FB55B57 /* EmojiFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C0F308C4F69EC615D1DDF0 /* EmojiFile.swift */; };
-		F49FA1CAC7383CC33DC89161 /* NoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F837EA87689C4830532EC5 /* NoResultsView.swift */; };
-		F7FA2B450B28E58B6F7A840D /* MediaListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4493FAD108BF9F4313D170E8 /* MediaListViewController.swift */; };
+		CD3AC6B3091512EFBA954029 /* PlaylistCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CE29DBD8E095C2444EE940 /* PlaylistCellView.swift */; };
+		D8D0867B0971EBCBAD12315F /* ParallaxMotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F229BD856B58284B42A2B9C /* ParallaxMotionManager.swift */; };
 		F9E63BA9A3975E0D1F3F514D /* YT_ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1829665355D6E65537F170 /* YT_ID.swift */; };
+		F9EAC2F1C0510990FEBD523A /* MediaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB35E51B0EF2EAB27B0594F /* MediaListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		03404CC9BBD371EA840CDF02 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-		09F837EA87689C4830532EC5 /* NoResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultsView.swift; sourceTree = "<group>"; };
+		05AE262A9D050AB8FA5B7B6F /* YandexLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginViewModel.swift; sourceTree = "<group>"; };
+		0C2292014C6BF6CF4746B0DB /* SpotifyAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAuthView.swift; sourceTree = "<group>"; };
 		11D73A470E1C28BDFC8F3C30 /* slushots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = slushots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D3100E6C8333614D0D7041 /* YandexApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexApiCaller.swift; sourceTree = "<group>"; };
+		1A8AF6E990D7619242FEA4F5 /* StreamingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingService.swift; sourceTree = "<group>"; };
 		1B227C3A8EED20DBC03AEEA2 /* SPTFApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTFApiCaller.swift; sourceTree = "<group>"; };
+		1ED9C11120D7FAC7DACB4B45 /* SlushotsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlushotsApp.swift; sourceTree = "<group>"; };
+		2100ABEE5B4A7328BF2FF753 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		23093200BF83DEAD7322EF66 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
-		24C0F308C4F69EC615D1DDF0 /* EmojiFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiFile.swift; sourceTree = "<group>"; };
 		2530209048A77CC3CA35587A /* YTApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTApiCaller.swift; sourceTree = "<group>"; };
 		274E34BF4EB36BB75997B148 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28EC6876D8722A9DE056BB75 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
-		2AA40420DB52307274430B6A /* PlaylistTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewCell.swift; sourceTree = "<group>"; };
-		4493FAD108BF9F4313D170E8 /* MediaListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListViewController.swift; sourceTree = "<group>"; };
-		44D593C30644B0B97D153630 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5243E5748A6A30FA35516D2F /* yandexLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yandexLogo.png; sourceTree = "<group>"; };
-		55F022983F98E65FF1AE291C /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		313473035A2AE12E61CA53B7 /* MediaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListView.swift; sourceTree = "<group>"; };
+		3BB35E51B0EF2EAB27B0594F /* MediaListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaListViewModel.swift; sourceTree = "<group>"; };
+		3F229BD856B58284B42A2B9C /* ParallaxMotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxMotionManager.swift; sourceTree = "<group>"; };
+		4EAFEAAA26FF4B3B59B15224 /* EmojiFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiFile.swift; sourceTree = "<group>"; };
 		59729535AC86800CAB2E1467 /* SPTFAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTFAuthManager.swift; sourceTree = "<group>"; };
+		5C12BD673028FB54B820A4F9 /* YandexLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginView.swift; sourceTree = "<group>"; };
 		6350B05678AF3594914ECE41 /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		71E483981F8B66B18B19E84F /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
-		722C9B55FE0F880822D4E411 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		7386A7B5D134900387E30F19 /* ColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtention.swift; sourceTree = "<group>"; };
-		7BD37382D80C5F0C8DCD3155 /* crowd-1056764.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "crowd-1056764.jpg"; sourceTree = "<group>"; };
-		8AFFF3220344BA573E804718 /* iphone-1836071.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "iphone-1836071.jpg"; sourceTree = "<group>"; };
+		7C650D48A78D7DE299D6CDD2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		7F5F18FDD59BE14533B6C72C /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		8FEBDBBDDF1B3EBD076E932B /* YTSnippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTSnippet.swift; sourceTree = "<group>"; };
-		95DEC735D26299184271CF2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9BED84559EAD5202DCF0ECC8 /* spotifyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spotifyLogo.png; sourceTree = "<group>"; };
-		9C6D64272932C96509EDB88F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		98562242B092BF27D0A820CF /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		9C92F9DCC429F709C0B7EE7F /* NoResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultsView.swift; sourceTree = "<group>"; };
 		A1ABDD44C6B3AC31A16A3D95 /* YandexResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexResponse.swift; sourceTree = "<group>"; };
 		AC86D30D8B27D3C7F151C905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AEBE768450C15F341090CF52 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		B4B8FF8276BE52FD6B4DC3B5 /* PlaylistCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCellView.swift; sourceTree = "<group>"; };
-		B8D52DD61A960DAA5D2D21F9 /* YandexLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexLoginViewController.swift; sourceTree = "<group>"; };
+		B8643DFC99B756DAD9E5C34B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C20EF81816B6C85862263CE8 /* STPFAuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STPFAuthResponse.swift; sourceTree = "<group>"; };
+		C89254F526651788FB241092 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
+		D2CE29DBD8E095C2444EE940 /* PlaylistCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCellView.swift; sourceTree = "<group>"; };
 		D52FD62F56634DB28BB232AF /* static-glitch2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "static-glitch2.gif"; sourceTree = "<group>"; };
 		D625696C90DFE4773FB3BE40 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		DB0D490A52FB877F68D603F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DC1829665355D6E65537F170 /* YT_ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YT_ID.swift; sourceTree = "<group>"; };
+		DD2D95D69919CA93831D0E4B /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
 		E51874F0C7F8E5641D28288B /* YTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTResponse.swift; sourceTree = "<group>"; };
-		EB5111857DE47BD8A58AE020 /* SPTFResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTFResponse.swift; sourceTree = "<group>"; };
+		EB5111857DE47BD8A58AE020 /* SPTFSongResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTFSongResponse.swift; sourceTree = "<group>"; };
 		ED13FEB94EB7283CC56C5872 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F5EE2E8FB5C723FEEB22A6EE /* Slushots.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Slushots.entitlements; sourceTree = "<group>"; };
 		F6D50BC0CE04824697869FF7 /* SignOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOut.swift; sourceTree = "<group>"; };
-		F729564B46D3E45852FEF520 /* PlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		07B603D5EE2660F243924A62 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				03404CC9BBD371EA840CDF02 /* AuthViewController.swift */,
-				24C0F308C4F69EC615D1DDF0 /* EmojiFile.swift */,
-				4493FAD108BF9F4313D170E8 /* MediaListViewController.swift */,
-				09F837EA87689C4830532EC5 /* NoResultsView.swift */,
-				F729564B46D3E45852FEF520 /* PlayerController.swift */,
-				722C9B55FE0F880822D4E411 /* PlayerViewController.swift */,
-				55F022983F98E65FF1AE291C /* PlayerViewModel.swift */,
-				B4B8FF8276BE52FD6B4DC3B5 /* PlaylistCellView.swift */,
-				2AA40420DB52307274430B6A /* PlaylistTableViewCell.swift */,
-				9C6D64272932C96509EDB88F /* WelcomeViewController.swift */,
-				B8D52DD61A960DAA5D2D21F9 /* YandexLoginViewController.swift */,
+				6179DF5F4A97F471734FAAE5 /* SUI */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -115,11 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				ED13FEB94EB7283CC56C5872 /* Assets.xcassets */,
-				7BD37382D80C5F0C8DCD3155 /* crowd-1056764.jpg */,
-				8AFFF3220344BA573E804718 /* iphone-1836071.jpg */,
-				9BED84559EAD5202DCF0ECC8 /* spotifyLogo.png */,
 				D52FD62F56634DB28BB232AF /* static-glitch2.gif */,
-				5243E5748A6A30FA35516D2F /* yandexLogo.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -130,7 +117,7 @@
 				23093200BF83DEAD7322EF66 /* Artist.swift */,
 				AEBE768450C15F341090CF52 /* Image.swift */,
 				F6D50BC0CE04824697869FF7 /* SignOut.swift */,
-				EB5111857DE47BD8A58AE020 /* SPTFResponse.swift */,
+				EB5111857DE47BD8A58AE020 /* SPTFSongResponse.swift */,
 				C20EF81816B6C85862263CE8 /* STPFAuthResponse.swift */,
 				28EC6876D8722A9DE056BB75 /* Track.swift */,
 			);
@@ -141,17 +128,40 @@
 			isa = PBXGroup;
 			children = (
 				274E34BF4EB36BB75997B148 /* AppDelegate.swift */,
-				DB0D490A52FB877F68D603F9 /* SceneDelegate.swift */,
 			);
 			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		6179DF5F4A97F471734FAAE5 /* SUI */ = {
+			isa = PBXGroup;
+			children = (
+				05AE262A9D050AB8FA5B7B6F /* YandexLoginViewModel.swift */,
+				4EAFEAAA26FF4B3B59B15224 /* EmojiFile.swift */,
+				313473035A2AE12E61CA53B7 /* MediaListView.swift */,
+				3BB35E51B0EF2EAB27B0594F /* MediaListViewModel.swift */,
+				9C92F9DCC429F709C0B7EE7F /* NoResultsView.swift */,
+				DD2D95D69919CA93831D0E4B /* PlayerController.swift */,
+				2100ABEE5B4A7328BF2FF753 /* PlayerViewController.swift */,
+				C89254F526651788FB241092 /* PlayerViewModel.swift */,
+				D2CE29DBD8E095C2444EE940 /* PlaylistCellView.swift */,
+				7F5F18FDD59BE14533B6C72C /* SplashScreenView.swift */,
+				0C2292014C6BF6CF4746B0DB /* SpotifyAuthView.swift */,
+				7C650D48A78D7DE299D6CDD2 /* WelcomeView.swift */,
+				5C12BD673028FB54B820A4F9 /* YandexLoginView.swift */,
+			);
+			path = SUI;
 			sourceTree = "<group>";
 		};
 		71355FFA4565F026AEE43FED /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B8643DFC99B756DAD9E5C34B /* AppCoordinator.swift */,
 				6350B05678AF3594914ECE41 /* CacheManager.swift */,
 				7386A7B5D134900387E30F19 /* ColorExtention.swift */,
 				D625696C90DFE4773FB3BE40 /* Constants.swift */,
+				98562242B092BF27D0A820CF /* ImageLoader.swift */,
+				3F229BD856B58284B42A2B9C /* ParallaxMotionManager.swift */,
+				1A8AF6E990D7619242FEA4F5 /* StreamingService.swift */,
 				71E483981F8B66B18B19E84F /* UserDefaultsManager.swift */,
 			);
 			path = Helpers;
@@ -161,11 +171,12 @@
 			isa = PBXGroup;
 			children = (
 				AC86D30D8B27D3C7F151C905 /* Info.plist */,
+				F5EE2E8FB5C723FEEB22A6EE /* Slushots.entitlements */,
+				1ED9C11120D7FAC7DACB4B45 /* SlushotsApp.swift */,
 				71355FFA4565F026AEE43FED /* Helpers */,
 				3A5765B33176B34C42846E6A /* Images */,
 				9A13937C9CFC35F24114AFD1 /* Models */,
 				8164CE476AC978476962DD0B /* Network */,
-				D1DF243C44652CD9F5B45272 /* Storyboards */,
 				58D133AB6E59E4E0AE28D916 /* SupportFiles */,
 				07B603D5EE2660F243924A62 /* ViewControllers */,
 			);
@@ -207,15 +218,6 @@
 				A1ABDD44C6B3AC31A16A3D95 /* YandexResponse.swift */,
 			);
 			path = Yandex;
-			sourceTree = "<group>";
-		};
-		D1DF243C44652CD9F5B45272 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				43FB765450FBA88961FACA2C /* LaunchScreen.storyboard */,
-				5ED6C8A10B51EAC8CEDD1E7C /* Main.storyboard */,
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		DE564B89988973A262C17A46 /* YouTube */ = {
@@ -287,13 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3881505CAEE013D63605F05F /* Assets.xcassets in Resources */,
-				12944C7EA24B05828DD78B65 /* LaunchScreen.storyboard in Resources */,
-				BB36EAAAD12805F1B6C026E6 /* Main.storyboard in Resources */,
-				8E89A6123FC6B727C7E62B7F /* crowd-1056764.jpg in Resources */,
-				0AE41293479060459C239495 /* iphone-1836071.jpg in Resources */,
-				2AD256E6E1EAF7F1431C2EA6 /* spotifyLogo.png in Resources */,
 				89F4A708009675A2771B1BB2 /* static-glitch2.gif in Resources */,
-				5AAFFCC491DA8DDBD88135F6 /* yandexLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,60 +300,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80718AE6D98DFB6E3C72CC5 /* AppCoordinator.swift in Sources */,
 				202C4B954C1337732E174307 /* AppDelegate.swift in Sources */,
 				BD1F4F5019B66816CACC29D9 /* Artist.swift in Sources */,
-				9B43B09F91ACE1449999DC08 /* AuthViewController.swift in Sources */,
 				C65285EB4107AC8451CC5D65 /* CacheManager.swift in Sources */,
 				890746BA2502770D551EB49F /* ColorExtention.swift in Sources */,
 				2C0AC56CCC4B247377E83001 /* Constants.swift in Sources */,
-				E371FC83BA7DD2761FB55B57 /* EmojiFile.swift in Sources */,
+				76013C24EF59F916D8B4D200 /* EmojiFile.swift in Sources */,
 				AC582A6C7F2AC9C6BC781058 /* Image.swift in Sources */,
-				F7FA2B450B28E58B6F7A840D /* MediaListViewController.swift in Sources */,
-				F49FA1CAC7383CC33DC89161 /* NoResultsView.swift in Sources */,
-				57DD12146C4DDE7B5AE578EF /* PlayerController.swift in Sources */,
-				58E0A8EEC50FE4DBC2E6EC94 /* PlayerViewController.swift in Sources */,
-				482A5FF868C7BC09DFA805F5 /* PlayerViewModel.swift in Sources */,
-				D11137DE5A60A3C03AC13F9B /* PlaylistCellView.swift in Sources */,
-				A76D2F33D8EEE06039ED9E65 /* PlaylistTableViewCell.swift in Sources */,
+				63CBE5A087E14FE51CFD2179 /* ImageLoader.swift in Sources */,
+				AA84F91F393CD3308D7DED70 /* MediaListView.swift in Sources */,
+				F9EAC2F1C0510990FEBD523A /* MediaListViewModel.swift in Sources */,
+				85E9117BD44682A543FEE667 /* NoResultsView.swift in Sources */,
+				D8D0867B0971EBCBAD12315F /* ParallaxMotionManager.swift in Sources */,
+				B2AAC95848830A152A45C333 /* PlayerController.swift in Sources */,
+				0F0BA4A11B4D0A266FF66135 /* PlayerViewController.swift in Sources */,
+				B4DFF2AF9DC2A079EE6DE1E7 /* PlayerViewModel.swift in Sources */,
+				CD3AC6B3091512EFBA954029 /* PlaylistCellView.swift in Sources */,
 				B4088B90581437F2658A4B73 /* SPTFApiCaller.swift in Sources */,
 				20E43C80CAC0E31F92D0995E /* SPTFAuthManager.swift in Sources */,
-				7B49F50E708C1056ECAD850B /* SPTFResponse.swift in Sources */,
+				7B49F50E708C1056ECAD850B /* SPTFSongResponse.swift in Sources */,
 				360ECAB13584EA2A3BAA739F /* STPFAuthResponse.swift in Sources */,
-				94CFB79CDD8F1D6A60A09755 /* SceneDelegate.swift in Sources */,
 				ABF70F7D60B2AB6807879D53 /* SignOut.swift in Sources */,
+				59B619AB6685AC8DBDF2FE49 /* SlushotsApp.swift in Sources */,
+				2D1ACA6550D597FE53C1EF5F /* SplashScreenView.swift in Sources */,
+				B12ECA3368B912C8EA50F19A /* SpotifyAuthView.swift in Sources */,
+				3DEC6E510FF4C413262FBA27 /* StreamingService.swift in Sources */,
 				03435605851E9365D74D6F5E /* Track.swift in Sources */,
 				0262E637914713E05271182C /* UserDefaultsManager.swift in Sources */,
-				498E596B1D0A58625314B8E1 /* WelcomeViewController.swift in Sources */,
+				0E916596E3634FC4AA73BA41 /* WelcomeView.swift in Sources */,
 				8AC50B59BCB2A3000EAE2768 /* YTApiCaller.swift in Sources */,
 				5F415258B477AA285B147966 /* YTResponse.swift in Sources */,
 				A98504A49502EEFEE9934FA8 /* YTSnippet.swift in Sources */,
 				F9E63BA9A3975E0D1F3F514D /* YT_ID.swift in Sources */,
 				8F01E5FE1A6CF3193AE96DA1 /* YandexApiCaller.swift in Sources */,
-				2623B1BDEA01294372BC0AD8 /* YandexLoginViewController.swift in Sources */,
+				7F732604891479F8BC01663B /* YandexLoginView.swift in Sources */,
+				72F123EE169A5109E2E52BAF /* YandexLoginViewModel.swift in Sources */,
 				69476249716B47327066ED70 /* YandexResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		43FB765450FBA88961FACA2C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				44D593C30644B0B97D153630 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		5ED6C8A10B51EAC8CEDD1E7C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95DEC735D26299184271CF2A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3ADCCE9E678BF5254ED1FBB7 /* Debug */ = {
@@ -412,7 +395,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = PFP266U7G7;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -432,8 +415,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IDEPreferLogStreaming = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 2.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -497,7 +480,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = PFP266U7G7;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -511,8 +494,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IDEPreferLogStreaming = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 1.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 2.0.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

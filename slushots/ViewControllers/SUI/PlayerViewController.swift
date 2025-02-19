@@ -29,7 +29,7 @@ struct PlayerView: View {
                     ZStack(alignment: .center)  {
                         WhiteNoiseView(gifName: "static-glitch2")
                         
-                        PlayerController(isLoading: $isLoading, songName: songTitle, artistName: artistName)
+                        PlayerControl(isLoading: $isLoading, songName: songTitle, artistName: artistName)
                     }.opacity(fadeOut ? 0 : 1)
                         .animation(
                             Animation.timingCurve(0.25, 0.1, 0.25, 1.0, duration: 1),
@@ -54,7 +54,7 @@ struct PlayerView: View {
                     } else {
                         webView
 #if DEBUG
-                        PlayerController(isLoading: $isLoading, songName: songTitle, artistName: artistName)
+//                        PlayerControl(isLoading: $isLoading, songName: songTitle, artistName: artistName)
 #endif
                     }
                 }
