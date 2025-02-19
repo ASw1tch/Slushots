@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PlayerController: View {
+struct PlayerControl: View {
     @Binding var isLoading: Bool
     let songName: String
     let artistName: String
@@ -113,5 +113,5 @@ struct ShimmerEffect: ViewModifier {
 }
 
 #Preview {
-    PlayerController(isLoading: .constant(false), songName: "Hope", artistName: "NF")
+    PlayerControl(isLoading: .constant(false), songName: "Hope", artistName: "NF")
 }

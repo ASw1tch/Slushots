@@ -14,7 +14,7 @@ struct MediaListView: View {
     @State private var showSignOutConfirmation = false
     @State private var showSecretFeatureAlert = false
     @State private var shouldNavigateToWelcome = false
-    @State private var secretPassword = "HappyNewCover812"
+    @State private var secretPassword = ""
     
     @State private var showResultAlert = false
     @State private var resultAlertTitle = ""
@@ -30,7 +30,7 @@ struct MediaListView: View {
     
     var body: some View {
             ScrollView {
-                VStack(alignment: .leading, spacing: 16) {
+                LazyVStack(alignment: .leading, spacing: 16) {
                     ForEach(0..<viewModel.numberOfTracks, id: \.self) { index in
                         let info = viewModel.trackInfo(at: index)
                         
@@ -44,6 +44,11 @@ struct MediaListView: View {
                             )
                             .foregroundColor(.primary)
                             .padding(.horizontal, 10)
+                        }
+                        .onAppear {
+                            if index == viewModel.numberOfTracks - 1 {
+                                viewModel.loadMoreIfNeeded()
+                            }
                         }
                     }
                 }

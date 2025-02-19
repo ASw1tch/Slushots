@@ -77,6 +77,9 @@ struct YandexLoginView: View {
                     shouldNavigate = true
                 }
             }
+            .onTapGesture {
+                UIApplication.shared.hideKeyboard()
+            }
         }
     
     @ViewBuilder
@@ -120,6 +123,12 @@ struct YandexLoginView: View {
             .opacity(colorScheme == .light ? 0.4 : 0.7)
             .animation(.easeInOut(duration: 2).repeatForever(autoreverses: true),
                        value: animateGradient)
+    }
+}
+
+extension UIApplication {
+    func hideKeyboard() {
+        self.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 
