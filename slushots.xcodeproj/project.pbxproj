@@ -94,12 +94,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		07B603D5EE2660F243924A62 /* ViewControllers */ = {
+		07B603D5EE2660F243924A62 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6179DF5F4A97F471734FAAE5 /* SUI */,
+				4EAFEAAA26FF4B3B59B15224 /* EmojiFile.swift */,
+				313473035A2AE12E61CA53B7 /* MediaListView.swift */,
+				9C92F9DCC429F709C0B7EE7F /* NoResultsView.swift */,
+				DD2D95D69919CA93831D0E4B /* PlayerController.swift */,
+				2100ABEE5B4A7328BF2FF753 /* PlayerViewController.swift */,
+				D2CE29DBD8E095C2444EE940 /* PlaylistCellView.swift */,
+				7F5F18FDD59BE14533B6C72C /* SplashScreenView.swift */,
+				0C2292014C6BF6CF4746B0DB /* SpotifyAuthView.swift */,
+				7C650D48A78D7DE299D6CDD2 /* WelcomeView.swift */,
+				5C12BD673028FB54B820A4F9 /* YandexLoginView.swift */,
 			);
-			path = ViewControllers;
+			path = View;
 			sourceTree = "<group>";
 		};
 		3A5765B33176B34C42846E6A /* Images */ = {
@@ -132,26 +141,6 @@
 			path = SupportFiles;
 			sourceTree = "<group>";
 		};
-		6179DF5F4A97F471734FAAE5 /* SUI */ = {
-			isa = PBXGroup;
-			children = (
-				05AE262A9D050AB8FA5B7B6F /* YandexLoginViewModel.swift */,
-				4EAFEAAA26FF4B3B59B15224 /* EmojiFile.swift */,
-				313473035A2AE12E61CA53B7 /* MediaListView.swift */,
-				3BB35E51B0EF2EAB27B0594F /* MediaListViewModel.swift */,
-				9C92F9DCC429F709C0B7EE7F /* NoResultsView.swift */,
-				DD2D95D69919CA93831D0E4B /* PlayerController.swift */,
-				2100ABEE5B4A7328BF2FF753 /* PlayerViewController.swift */,
-				C89254F526651788FB241092 /* PlayerViewModel.swift */,
-				D2CE29DBD8E095C2444EE940 /* PlaylistCellView.swift */,
-				7F5F18FDD59BE14533B6C72C /* SplashScreenView.swift */,
-				0C2292014C6BF6CF4746B0DB /* SpotifyAuthView.swift */,
-				7C650D48A78D7DE299D6CDD2 /* WelcomeView.swift */,
-				5C12BD673028FB54B820A4F9 /* YandexLoginView.swift */,
-			);
-			path = SUI;
-			sourceTree = "<group>";
-		};
 		71355FFA4565F026AEE43FED /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +167,8 @@
 				9A13937C9CFC35F24114AFD1 /* Models */,
 				8164CE476AC978476962DD0B /* Network */,
 				58D133AB6E59E4E0AE28D916 /* SupportFiles */,
-				07B603D5EE2660F243924A62 /* ViewControllers */,
+				EABC7EA82D988B97008AFE03 /* ViewModel */,
+				07B603D5EE2660F243924A62 /* View */,
 			);
 			path = slushots;
 			sourceTree = "<group>";
@@ -228,6 +218,16 @@
 				8FEBDBBDDF1B3EBD076E932B /* YTSnippet.swift */,
 			);
 			path = YouTube;
+			sourceTree = "<group>";
+		};
+		EABC7EA82D988B97008AFE03 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				05AE262A9D050AB8FA5B7B6F /* YandexLoginViewModel.swift */,
+				3BB35E51B0EF2EAB27B0594F /* MediaListViewModel.swift */,
+				C89254F526651788FB241092 /* PlayerViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FCA50BA37203C918CBA28133 /* Products */ = {
