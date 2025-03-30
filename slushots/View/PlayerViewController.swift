@@ -11,6 +11,7 @@ import WebKit
 import ImageIO
 
 struct PlayerView: View {
+    @Environment(\.colorScheme) var colorScheme
     @StateObject var viewModel = PlayerViewModel()
     @State private var artistName: String = ""
     @State private var songTitle: String = ""
@@ -18,6 +19,7 @@ struct PlayerView: View {
     @State private var showPlaceholder: Bool = false
     @State private var isLoading: Bool = true
     @State private var fadeOut: Bool = false
+    @State private var isVideoURLSaved: Bool = false
     
     let songPassed: String
     let artistPassed: String
@@ -53,8 +55,49 @@ struct PlayerView: View {
                         placeholderView
                     } else {
                         webView
+                        VStack {
+                            HStack {
+                                Button(action: {
+                                    UserDefaultsManager.shared.deleteVideoURL(forArtist: artistName, song: songTitle)
+                                    isVideoURLSaved = false
+                                }) {
+                                    Text("Nah, bruh ❌")
+                                        .frame(width: 150, height: 40)
+                                        .foregroundColor(colorScheme == .light ? .black : .white)
+                                        .background(colorScheme == .light ? Color.white : Color.gray.opacity(0.2))
+                                        .overlay(colorScheme == .light ?
+                                                 RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.black, lineWidth: 1) : nil
+                                        )
+                                        .cornerRadius(colorScheme == .light ? 0 : 10)
+                                    
+                                }
+                                Spacer()
+                                Button(action: {
+                                    if let videoUrl = embedUrl, !isVideoURLSaved {
+                                        UserDefaultsManager.shared.saveVideoURL(forArtist: artistName, song: songTitle, url: videoUrl.absoluteString)
+                                        isVideoURLSaved = true
+                                    }
+                                    print("Done! Url Is \(embedUrl ?? URL(string: "")!)")
+                                }) {
+                                    Text(isVideoURLSaved ? "Thank you 🙏🏽" : "That's right! ✅")
+                                        .frame(maxWidth: 250, minHeight: 40)
+                                        .foregroundColor(colorScheme == .light ? .white : .black)
+                                        .background(colorScheme == .light ? Color.black : Color.white)
+                                        .cornerRadius(10)
+                                        .opacity(isVideoURLSaved ? 0.5 : 1)
+                                }
+                                .disabled(isVideoURLSaved)
+                            }.padding(.horizontal, 15)
+                            Text("Help us improove the accuracy of our results 🥺")
+                                .font(.caption)
+                                .bold()
+                                .lineLimit(1)
+                                .foregroundStyle(.secondary)
+                                .padding(.horizontal, 15)
+                        }
 #if DEBUG
-//                        PlayerControl(isLoading: $isLoading, songName: songTitle, artistName: artistName)
+                        //                        PlayerControl(isLoading: $isLoading, songName: songTitle, artistName: artistName)
 #endif
                     }
                 }
@@ -70,7 +113,7 @@ struct PlayerView: View {
             .frame(maxWidth: .infinity, maxHeight: 400)
             .cornerRadius(10)
             .shadow(radius: 5)
-            .padding()
+            .padding(.horizontal, 15)
     }
     
     private var placeholderView: some View {
@@ -92,10 +135,29 @@ struct PlayerView: View {
     
     private func prepareVideo() {
         isLoading = true
+        
+        // If url is saved
+        if let savedUrlString = UserDefaultsManager.shared.getVideoURL(forArtist: artistPassed, song: songPassed),
+           let savedUrl = URL(string: savedUrlString) {
+            artistName = artistPassed
+            songTitle = songPassed
+            embedUrl = savedUrl
+            isVideoURLSaved = true
+            print("Loading from UD, no API call \(String(describing: embedUrl))")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                fadeOut = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                isLoading = false
+            }
+            return
+        }
+        
         let songString = prepareRequest(songTitle: songPassed, artistName: artistPassed)
         
         YTApiCaller.shared.getVideoFromCell(songTitle: songString) { result in
             DispatchQueue.main.async {
+                print("Loading from API CALL")
                 switch result {
                 case .success(let response):
                     fetchVideo(response: response)
